@@ -1,3 +1,5 @@
 **/.pio
 **/compile_commands.json
 **/.cache
+**/.direnv
+**/.envrc
