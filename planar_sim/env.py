@@ -7,6 +7,16 @@ import pymunk.pygame_util
 
 class BallBotEnv():
     def __init__(self):
+        pygame.init()
+        self.screen = pygame.display.set_mode((800, 800))
+        self.clock = pygame.time.Clock()
+        self.font = pygame.font.SysFont("None", 32)
+        self.options = pymunk.pygame_util.DrawOptions(self.screen)
+
+    def reset(self):
+        self.space = pymunk.Space()
+        self.space.gravity = (0, 900)
+
         # Parameters
         mB = 1000
         mW = 250
@@ -17,18 +27,10 @@ class BallBotEnv():
         rW = 35
         l = 300 + rW
 
-        # Starting oordinates
+        # Starting coordinates
         xB, yB = (400, 635)
         xW, yW = (xB, yB-rB-rW)
         xC, yC = (xB, yB-l/2)
-
-        pygame.init()
-        self.screen = pygame.display.set_mode((800, 800))
-        self.clock = pygame.time.Clock()
-        self.font = pygame.font.SysFont("None", 32)
-        self.space = pymunk.Space()
-        self.space.gravity = (0, 900)
-        self.options = pymunk.pygame_util.DrawOptions(self.screen)
 
         self.create_floor()
         self.create_ball(mass=mB, radius=rB)
@@ -47,18 +49,21 @@ class BallBotEnv():
 
         self.motor = pymunk.SimpleMotor(self.ball, self.wheel, 0)
         self.space.add(self.motor)
-        self.motor.rate = 1
 
-        #self.states = 
-        #self.actions = 
-        #self.rewards =
+        self.state = [self.ball.angle, self.ball.angular_velocity,
+                self.rod.angle, self.rod.angular_velocity]
+        self.action = 0 # angular velocity of the motor
+        self.reward = 0 # +1 reward per time step
+        self.done = False
 
-    def render(self, stats=True):
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                pygame.quit()
-                sys.exit()
-                
+        return self.state
+
+    def render(self, stats=False):
+        #for event in pygame.event.get():
+        #    if event.type == pygame.QUIT:
+        #        pygame.quit()
+        #        sys.exit()
+
         self.screen.fill(pygame.Color('white'))
         self.space.debug_draw(self.options)
 
@@ -66,10 +71,22 @@ class BallBotEnv():
             self.draw_coords([self.ball, self.wheel, self.com])
             self.draw_phi()
             self.draw_theta()
+            self.draw_mdp()
 
-        self.space.step(1/120)
         pygame.display.update()
+
+    def step(self, action):
+        self.action = action
+
+        self.motor.rate = action
+        self.space.step(1/120)
         self.clock.tick(120)
+
+        self.state = [self.ball.angle, self.ball.angular_velocity,
+                self.rod.angle, self.rod.angular_velocity]
+        self.reward += 1
+        self.done = self.done or abs(self.rod.angle) >= math.pi/2
+        return self.state, self.reward, self.done
 
     def create_ball(self, mass, radius):
         moment = pymunk.moment_for_circle(mass, 0, radius)
@@ -151,7 +168,20 @@ class BallBotEnv():
             (xB+20, yB-w-20),
         )
 
-env = BallBotEnv()
+    def draw_mdp(self):
+        x, y = (0, 0)
+        self.screen.blit(self.font.render("state: [", True, pygame.Color("black")), (0, y))
 
-while True:
-    env.render()
+        for s in self.state:
+            x += 75
+            self.screen.blit(self.font.render("{:<5.3f}".format(s), True, pygame.Color("black")), (x, y))
+
+        x += 75
+        self.screen.blit(self.font.render("]", True, pygame.Color("black")), (x, y))
+
+        y += 25
+        self.screen.blit(self.font.render("action: {:.3f}".format(self.action), True, pygame.Color("black")), (0, y))
+
+        y += 25
+        self.screen.blit(self.font.render("reward: {}".format(self.reward), True, pygame.Color("black")), (0, y))
+
