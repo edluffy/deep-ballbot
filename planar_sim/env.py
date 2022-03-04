@@ -1,5 +1,6 @@
 import sys, math
 
+import numpy as np
 import pygame
 
 import pymunk
@@ -50,7 +51,7 @@ class BallBotEnv():
         self.pivot_joint(self.rod, self.com, (0, 0), (0, 0), False)
 
         self.motor = pymunk.SimpleMotor(self.ball, self.wheel, 0)
-        self.space.add(self.motor)
+        self.gear_joint(self.ball, self.wheel, 0, -rW/rB)
 
         self.state = [self.ball.angle, self.ball.angular_velocity,
                 self.rod.angle, self.rod.angular_velocity]
@@ -58,9 +59,8 @@ class BallBotEnv():
         self.reward = 0 # +1 reward per time step
         self.done = False
 
-        #self.motor.rate = 1
         #self.motor.max_force = 10e10
-        self.wheel.angular_velocity = 20
+        self.wheel.angular_velocity = -1
         self.space.step(1/120)
 
         return self.state
@@ -85,30 +85,21 @@ class BallBotEnv():
     def step(self, action):
         self.action = action
 
-        #cutoff = 1000
-        #if action > cutoff:
-        #    action = cutoff
-        #elif action < -cutoff:
-        #    action = -cutoff
+        #self.wheel.apply_impulse_at_local_point((action*1000, 0), (0, 35))
+        #self.wheel.apply_impulse_at_local_point((-action*1000, 0), (0, 0))
 
-        #self.wheel.angular_velocity = action
+        print(action)
+        #action = -action*5*10e6#*-4.9*10e7
+        action = -action*5.15*10e6
+        self.wheel.torque = np.clip(action, -10e10, 10e10)
 
-        #if self.action is True:
-        #    self.motor.rate = 200
-        #else:
-        #    self.motor.rate = -200
-
-        #for _ in range(3):
         self.space.step(1/120)
         self.clock.tick(120)
 
-        #self.state = [self.ball.angle, self.ball.angular_velocity,
-        #        self.rod.angle, self.rod.angular_velocity]
         self.state = [self.ball.angle, self.rod.angle,
                 self.ball.angular_velocity, self.rod.angular_velocity]
-        self.done = self.done or abs(self.rod.angle) >= math.pi /2
+        self.done = self.done or abs(self.rod.angle) >= math.pi / 6
 
-        #self.reward += 1
         self.reward += math.cos(self.rod.angle)
         return self.state, math.cos(self.rod.angle), self.done
 
@@ -154,6 +145,11 @@ class BallBotEnv():
 
     def pivot_joint(self, body1, body2, anchor1=(0, 0), anchor2=(0, 0), collide=True):
         joint = pymunk.PivotJoint(body1, body2, anchor1, anchor2)
+        joint.collide_bodies = collide
+        self.space.add(joint)
+
+    def gear_joint(self, body1, body2, phase, ratio, collide=True):
+        joint = pymunk.GearJoint(body1, body2, phase, ratio)
         joint.collide_bodies = collide
         self.space.add(joint)
 

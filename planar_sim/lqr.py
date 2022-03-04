@@ -1,20 +1,40 @@
 import numpy as np
 
-from sympy import sin, cos, Matrix, Function, symbols, solve, simplify, Eq, latex
+from sympy import sin, cos, Matrix, Function, symbols, solve, simplify, Eq, latex, expand, collect
 from sympy.calculus.euler import euler_equations
 from sympy.physics.mechanics import LagrangesMethod, dynamicsymbols
 
 from scipy import linalg
 
+rB, rW, mB, mW, mC, l, g, t = symbols('rB rW mB mW mC l g t')
+theta, phi, tau = dynamicsymbols('theta phi tau')
+theta_dot, phi_dot = dynamicsymbols('theta phi', 1)
+
 class LQR:
     def __init__(self):
-        self.A, self.B = self.get_linearised_dynamics()
+        L = self.compute_lagrangian()
+        q_dot_dot = self.compute_motion_eq(L)
+        A, B = self.get_state_space(q_dot_dot)
 
-    def get_linearised_dynamics(self):
-        rB, rW, mB, mW, mC, l, g, t = symbols('rB rW mB mW mC l g t')
-        theta, phi, tau = dynamicsymbols('theta phi tau')
-        theta_dot, phi_dot = dynamicsymbols('theta phi', 1)
+        # Substitute in params
+        params = {
+                mB: 1000,
+                mW: 250,
+                mC: 500,
+                rB: 60,
+                rW: 35,
+                l: 335,
+                g: 981
+        }
 
+        self.A = np.array(A.evalf(subs=params).doit(), dtype=float)
+        self.B = np.array(B.evalf(subs=params).doit(), dtype=float)
+
+        print(self.A)
+        print('\n')
+        print(self.B)
+
+    def compute_lagrangian(self):
         TB = mB * rB**2 * phi_dot**2
         UB = 0
 
@@ -26,64 +46,56 @@ class LQR:
         UC = mC*g*l*cos(theta)
 
         L = TB + TW + TC - UB - UW - UC
+        return L
 
+    def compute_motion_eq(self, L):
         euler_expr = euler_equations(L, funcs=[theta, phi])
-        eq1 = euler_expr[0].lhs# - -tau*(rB/rW)
-        eq2 = euler_expr[1].lhs# - -tau*(rB/rW)
+        eq1 = euler_expr[0].lhs.expand() - tau*(rB/rW)
+        eq2 = euler_expr[1].lhs.expand() #- tau*(rB/rW+1)
 
-        M = Matrix([
+        M = simplify(Matrix([
             [eq1.coeff(theta.diff().diff()), eq1.coeff(phi.diff().diff())],
             [eq2.coeff(theta.diff().diff()), eq2.coeff(phi.diff().diff())]
-        ])
+        ]))
 
-        #print(simplify(eq1).coeff(theta.diff().diff()))
-        print(latex(eq1))
-        print('\n')
-        print(latex(simplify(eq1)))
+        F = simplify(Matrix([eq1, eq2]) - M*Matrix([theta.diff().diff(), phi.diff().diff()]))
 
-        theta_dot_dot = solve(eq1, theta.diff().diff())[0]
-        phi_dot_dot = solve(eq2, phi.diff().diff())[0]
+        q_dot_dot = M.inv()*F
+        return q_dot_dot
 
-        x1 = theta
-        x2 = phi
-        x3 = theta_dot
-        x4 = phi_dot
+    def get_state_space(self, q_dot_dot):
+        theta_dot_dot, phi_dot_dot = q_dot_dot
 
-        xdot = Matrix([x3, x4, theta_dot_dot, phi_dot_dot])
+        x = Matrix([theta, phi, theta_dot, phi_dot])
+        x_dot = Matrix([theta_dot, phi_dot, theta_dot_dot, phi_dot_dot])
 
-        A = xdot.jacobian([x1, x2, x3, x4])
-        B = xdot.jacobian([tau])
+        # Linearise around fixed point x: {0, 0, 0, 0}
+        A = x_dot.jacobian(x)
+        B = x_dot.jacobian([tau])
 
         fixed_point = [(theta, 0), (phi, 0), (theta_dot, 0), (phi_dot, 0)]
         A = A.subs(fixed_point)
         B = B.subs(fixed_point)
 
-
-        params = {
-                mB: 1000,
-                mW: 250,
-                mC: 500,
-                rB: 60,
-                rW: 35,
-                l: 335,
-                g: 981
-        }
-
-        A = np.array(A.evalf(subs=params).doit(), dtype=float)
-        B = np.array(B.evalf(subs=params).doit(), dtype=float)
+        #print(latex(simplify(A)))
+        #print('\n')
+        #print(latex(simplify(B)))
 
         return A, B
 
     def policy(self, state):
-        R = 1*np.eye(1)
-        Q = 1*np.eye(4)
+        R = 0.1*np.eye(1)
+        #Q = 5*np.eye(4)
+        Q = np.array([
+            [10, 0, 0, 0],
+            [0, 60, 0, 0],
+            [0, 0, 10, 0],
+            [0, 0, 0, 10]
+        ])
 
         P = linalg.solve_continuous_are(self.A, self.B, Q, R)
-
         K = np.linalg.inv(R) @ (self.B.T @ P)
 
         u = (-K @ state)[0]
 
         return u
-
-test = LQR()
