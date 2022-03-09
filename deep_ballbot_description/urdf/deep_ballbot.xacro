@@ -634,7 +634,7 @@
   </collision>
 </link>
 
-<link name="wheel_roller1.2_1">
+<link name="wheel_roller1_2_1">
   <inertial>
     <origin rpy="0 0 0" xyz="1.1343589664813969e-08 -1.599636010735095e-07 -4.949366528006482e-07"/>
     <mass value="0.0012011377071081658"/>
@@ -643,19 +643,19 @@
   <visual>
     <origin rpy="0 0 0" xyz="0.07833 -0.045224 -0.145601"/>
     <geometry>
-      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller1.2_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller1_2_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="0.07833 -0.045224 -0.145601"/>
     <geometry>
-      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller1.2_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller1_2_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
-<link name="wheel_roller1.4_1">
+<link name="wheel_roller1_4_1">
   <inertial>
     <origin rpy="0 0 0" xyz="0.0006668609842473416 -0.0018856180530575153 -0.0025402442651766"/>
     <mass value="0.0025623256301060106"/>
@@ -664,19 +664,19 @@
   <visual>
     <origin rpy="0 0 0" xyz="0.081103 -0.03322 -0.14302"/>
     <geometry>
-      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller1.4_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller1_4_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="0.081103 -0.03322 -0.14302"/>
     <geometry>
-      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller1.4_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller1_4_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
-<link name="wheel_roller1.9_1">
+<link name="wheel_roller1_9_1">
   <inertial>
     <origin rpy="0 0 0" xyz="2.1682235341879963e-07 -4.6082259215485255e-07 -9.665432673666707e-08"/>
     <mass value="0.0012011377071081259"/>
@@ -685,19 +685,19 @@
   <visual>
     <origin rpy="0 0 0" xyz="0.082135 -0.017421 -0.134994"/>
     <geometry>
-      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller1.9_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller1_9_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="0.082135 -0.017421 -0.134994"/>
     <geometry>
-      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller1.9_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller1_9_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
-<link name="wheel_roller1.7_1">
+<link name="wheel_roller1_7_1">
   <inertial>
     <origin rpy="0 0 0" xyz="1.8441455529316642e-07 7.14692537720496e-08 3.016277919237753e-07"/>
     <mass value="0.0025623256301059846"/>
@@ -706,19 +706,19 @@
   <visual>
     <origin rpy="0 0 0" xyz="0.073084 -0.011884 -0.124387"/>
     <geometry>
-      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller1.7_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller1_7_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="0.073084 -0.011884 -0.124387"/>
     <geometry>
-      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller1.7_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller1_7_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
-<link name="wheel_roller1.12_1">
+<link name="wheel_roller1_12_1">
   <inertial>
     <origin rpy="0 0 0" xyz="-4.134077118272961e-07 -3.3080520738058145e-07 -1.7636573396151434e-07"/>
     <mass value="0.0012011377071081525"/>
@@ -727,19 +727,19 @@
   <visual>
     <origin rpy="0 0 0" xyz="0.063771 -0.006813 -0.113787"/>
     <geometry>
-      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller1.12_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller1_12_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="0.063771 -0.006813 -0.113787"/>
     <geometry>
-      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller1.12_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller1_12_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
-<link name="wheel_roller1.5_1">
+<link name="wheel_roller1_5_1">
   <inertial>
     <origin rpy="0 0 0" xyz="4.571799286992584e-07 -4.655576237438952e-07 6.072471998852524e-08"/>
     <mass value="0.0025623256301060215"/>
@@ -748,19 +748,19 @@
   <visual>
     <origin rpy="0 0 0" xyz="0.052608 -0.015208 -0.108316"/>
     <geometry>
-      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller1.5_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller1_5_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="0.052608 -0.015208 -0.108316"/>
     <geometry>
-      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller1.5_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller1_5_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
-<link name="wheel_roller1.10_1">
+<link name="wheel_roller1_10_1">
   <inertial>
     <origin rpy="0 0 0" xyz="3.574854795726501e-07 -3.6339927947381945e-07 9.819223642515418e-08"/>
     <mass value="0.001201137707108164"/>
@@ -769,19 +769,19 @@
   <visual>
     <origin rpy="0 0 0" xyz="0.041588 -0.024011 -0.103174"/>
     <geometry>
-      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller1.10_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller1_10_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="0.041588 -0.024011 -0.103174"/>
     <geometry>
-      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller1.10_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller1_10_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
-<link name="wheel_roller1.6_1">
+<link name="wheel_roller1_6_1">
   <inertial>
     <origin rpy="0 0 0" xyz="-1.5083097651413802e-07 4.335249430553745e-07 -4.748097087031722e-07"/>
     <mass value="0.0025623256301060132"/>
@@ -790,19 +790,19 @@
   <visual>
     <origin rpy="0 0 0" xyz="0.039475 -0.037946 -0.108313"/>
     <geometry>
-      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller1.6_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller1_6_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="0.039475 -0.037946 -0.108313"/>
     <geometry>
-      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller1.6_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller1_6_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
-<link name="wheel_roller1.11_1">
+<link name="wheel_roller1_11_1">
   <inertial>
     <origin rpy="0 0 0" xyz="1.5200671593662562e-07 -6.254028867003214e-08 -3.0009008898657097e-07"/>
     <mass value="0.001201137707108158"/>
@@ -811,19 +811,19 @@
   <visual>
     <origin rpy="0 0 0" xyz="0.037783 -0.051814 -0.113781"/>
     <geometry>
-      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller1.11_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller1_11_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="0.037783 -0.051814 -0.113781"/>
     <geometry>
-      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller1.11_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller1_11_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
-<link name="wheel_roller1.3_1">
+<link name="wheel_roller1_3_1">
   <inertial>
     <origin rpy="0 0 0" xyz="1.8441451418022003e-07 4.0516786581346054e-07 3.016277917294863e-07"/>
     <mass value="0.0025623256301059937"/>
@@ -832,19 +832,19 @@
   <visual>
     <origin rpy="0 0 0" xyz="0.046834 -0.05735 -0.124387"/>
     <geometry>
-      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller1.3_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller1_3_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="0.046834 -0.05735 -0.124387"/>
     <geometry>
-      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller1.3_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller1_3_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
-<link name="wheel_roller1.8_1">
+<link name="wheel_roller1_8_1">
   <inertial>
     <origin rpy="0 0 0" xyz="-2.1064078460641955e-08 -4.6082251386331263e-07 -9.665432529337714e-08"/>
     <mass value="0.0012011377071081484"/>
@@ -853,19 +853,19 @@
   <visual>
     <origin rpy="0 0 0" xyz="0.056154 -0.062421 -0.134994"/>
     <geometry>
-      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller1.8_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller1_8_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="0.056154 -0.062421 -0.134994"/>
     <geometry>
-      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller1.8_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller1_8_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
-<link name="wheel_roller1.1_1">
+<link name="wheel_roller1_1_1">
   <inertial>
     <origin rpy="0 0 0" xyz="-4.803400587422013e-07 2.0996169430853584e-07 7.806477037020088e-08"/>
     <mass value="0.0025623256301060197"/>
@@ -874,19 +874,19 @@
   <visual>
     <origin rpy="0 0 0" xyz="0.067317 -0.054021 -0.140462"/>
     <geometry>
-      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller1.1_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller1_1_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="0.067317 -0.054021 -0.140462"/>
     <geometry>
-      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller1.1_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller1_1_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
-<link name="wheel_roller2.2_1">
+<link name="wheel_roller2_2_1">
   <inertial>
     <origin rpy="0 0 0" xyz="3.3311915409890104e-17 3.199273256454527e-07 -4.949365299544706e-07"/>
     <mass value="0.001201137707108136"/>
@@ -895,19 +895,19 @@
   <visual>
     <origin rpy="0 0 0" xyz="-0.0 0.090448 -0.145601"/>
     <geometry>
-      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller2.2_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller2_2_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="-0.0 0.090448 -0.145601"/>
     <geometry>
-      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller2.2_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller2_2_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
-<link name="wheel_roller2.4_1">
+<link name="wheel_roller2_4_1">
   <inertial>
     <origin rpy="0 0 0" xyz="0.0012986987297727726 0.0015200692565425222 -0.0025402442653456037"/>
     <mass value="0.002562325630105998"/>
@@ -916,19 +916,19 @@
   <visual>
     <origin rpy="0 0 0" xyz="-0.011783 0.086847 -0.14302"/>
     <geometry>
-      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller2.4_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller2_4_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="-0.011783 0.086847 -0.14302"/>
     <geometry>
-      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller2.4_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller2_4_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
-<link name="wheel_roller2.7_1">
+<link name="wheel_roller2_7_1">
   <inertial>
     <origin rpy="0 0 0" xyz="-2.3788655219292298e-07 -7.835488179119832e-08 -9.665444469786344e-08"/>
     <mass value="0.0012011377071081708"/>
@@ -937,19 +937,19 @@
   <visual>
     <origin rpy="0 0 0" xyz="-0.025981 0.079841 -0.134994"/>
     <geometry>
-      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller2.7_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller2_7_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="-0.025981 0.079841 -0.134994"/>
     <geometry>
-      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller2.7_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller2_7_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
-<link name="wheel_roller2.12_1">
+<link name="wheel_roller2_12_1">
   <inertial>
     <origin rpy="0 0 0" xyz="-4.1071313017226885e-14 -4.7663711796874786e-07 3.0162779128539707e-07"/>
     <mass value="0.002562325630106007"/>
@@ -958,19 +958,19 @@
   <visual>
     <origin rpy="0 0 0" xyz="-0.02625 0.069234 -0.124387"/>
     <geometry>
-      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller2.12_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller2_12_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="-0.02625 0.069234 -0.124387"/>
     <geometry>
-      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller2.12_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller2_12_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
-<link name="wheel_roller2.9_1">
+<link name="wheel_roller2_9_1">
   <inertial>
     <origin rpy="0 0 0" xyz="-2.378865546909248e-07 1.356287089582242e-09 -1.763656140435499e-07"/>
     <mass value="0.0012011377071081688"/>
@@ -979,19 +979,19 @@
   <visual>
     <origin rpy="0 0 0" xyz="-0.025986 0.058634 -0.113787"/>
     <geometry>
-      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller2.9_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller2_9_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="-0.025986 0.058634 -0.113787"/>
     <geometry>
-      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller2.9_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller2_9_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
-<link name="wheel_roller2.5_1">
+<link name="wheel_roller2_5_1">
   <inertial>
     <origin rpy="0 0 0" xyz="-3.3974599707858877e-07 -2.3573421648048765e-07 6.072436552206906e-08"/>
     <mass value="0.0025623256301060093"/>
@@ -1000,19 +1000,19 @@
   <visual>
     <origin rpy="0 0 0" xyz="-0.013134 0.053163 -0.108316"/>
     <geometry>
-      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller2.5_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller2_5_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="-0.013134 0.053163 -0.108316"/>
     <geometry>
-      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller2.5_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller2_5_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
-<link name="wheel_roller2.10_1">
+<link name="wheel_roller2_10_1">
   <inertial>
     <origin rpy="0 0 0" xyz="5.87871001866557e-17 -2.73201563302794e-07 9.819211303774278e-08"/>
     <mass value="0.0012011377071081241"/>
@@ -1021,19 +1021,19 @@
   <visual>
     <origin rpy="0 0 0" xyz="-0.0 0.048021 -0.103174"/>
     <geometry>
-      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller2.10_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller2_10_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="-0.0 0.048021 -0.103174"/>
     <geometry>
-      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller2.10_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller2_10_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
-<link name="wheel_roller2.6_1">
+<link name="wheel_roller2_6_1">
   <inertial>
     <origin rpy="0 0 0" xyz="3.7173389366707e-14 2.9979968901167053e-07 -4.748095401990726e-07"/>
     <mass value="0.002562325630106006"/>
@@ -1042,19 +1042,19 @@
   <visual>
     <origin rpy="0 0 0" xyz="0.013125 0.05316 -0.108313"/>
     <geometry>
-      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller2.6_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller2_6_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="0.013125 0.05316 -0.108313"/>
     <geometry>
-      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller2.6_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller2_6_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
-<link name="wheel_roller2.11_1">
+<link name="wheel_roller2_11_1">
   <inertial>
     <origin rpy="0 0 0" xyz="2.3788655226231192e-07 1.2508064472366298e-07 -3.0008997174701957e-07"/>
     <mass value="0.0012011377071081777"/>
@@ -1063,19 +1063,19 @@
   <visual>
     <origin rpy="0 0 0" xyz="0.025981 0.058628 -0.113781"/>
     <geometry>
-      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller2.11_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller2_11_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="0.025981 0.058628 -0.113781"/>
     <geometry>
-      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller2.11_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller2_11_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
-<link name="wheel_roller2.3_1">
+<link name="wheel_roller2_3_1">
   <inertial>
     <origin rpy="0 0 0" xyz="4.1206621448353076e-14 -4.766371196063268e-07 3.0162779197928646e-07"/>
     <mass value="0.0025623256301060154"/>
@@ -1084,19 +1084,19 @@
   <visual>
     <origin rpy="0 0 0" xyz="0.02625 0.069234 -0.124387"/>
     <geometry>
-      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller2.3_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller2_3_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="0.02625 0.069234 -0.124387"/>
     <geometry>
-      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller2.3_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller2_3_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
-<link name="wheel_roller2.8_1">
+<link name="wheel_roller2_8_1">
   <inertial>
     <origin rpy="0 0 0" xyz="2.37886554677047e-07 -7.835488113894229e-08 -9.66544453084861e-08"/>
     <mass value="0.0012011377071081413"/>
@@ -1105,19 +1105,19 @@
   <visual>
     <origin rpy="0 0 0" xyz="0.025981 0.079841 -0.134994"/>
     <geometry>
-      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller2.8_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller2_8_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="0.025981 0.079841 -0.134994"/>
     <geometry>
-      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller2.8_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller2_8_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
-<link name="wheel_roller2.1_1">
+<link name="wheel_roller2_1_1">
   <inertial>
     <origin rpy="0 0 0" xyz="3.754115074361408e-14 -2.5307392781392934e-07 7.806512436481228e-08"/>
     <mass value="0.002562325630106022"/>
@@ -1126,19 +1126,19 @@
   <visual>
     <origin rpy="0 0 0" xyz="0.013125 0.085309 -0.140462"/>
     <geometry>
-      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller2.1_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller2_1_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="0.013125 0.085309 -0.140462"/>
     <geometry>
-      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller2.1_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller2_1_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
-<link name="wheel_roller3.2_1">
+<link name="wheel_roller3_2_1">
   <inertial>
     <origin rpy="0 0 0" xyz="-1.1343589831347423e-08 -1.599636012886152e-07 -4.949366527173815e-07"/>
     <mass value="0.0012011377071081653"/>
@@ -1147,19 +1147,19 @@
   <visual>
     <origin rpy="0 0 0" xyz="-0.07833 -0.045224 -0.145601"/>
     <geometry>
-      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller3.2_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller3_2_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="-0.07833 -0.045224 -0.145601"/>
     <geometry>
-      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller3.2_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller3_2_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
-<link name="wheel_roller3.4_1">
+<link name="wheel_roller3_4_1">
   <inertial>
     <origin rpy="0 0 0" xyz="-0.001966559713953958 0.00036454879645857197 -0.002540244265699765"/>
     <mass value="0.0025623256301060137"/>
@@ -1168,19 +1168,19 @@
   <visual>
     <origin rpy="0 0 0" xyz="-0.069321 -0.053628 -0.14302"/>
     <geometry>
-      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller3.4_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller3_4_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="-0.069321 -0.053628 -0.14302"/>
     <geometry>
-      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller3.4_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller3_4_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
-<link name="wheel_roller3.9_1">
+<link name="wheel_roller3_9_1">
   <inertial>
     <origin rpy="0 0 0" xyz="2.1064078030430533e-08 -4.6082251177470557e-07 -9.665432429417642e-08"/>
     <mass value="0.0012011377071081484"/>
@@ -1189,19 +1189,19 @@
   <visual>
     <origin rpy="0 0 0" xyz="-0.056154 -0.062421 -0.134994"/>
     <geometry>
-      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller3.9_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller3_9_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="-0.056154 -0.062421 -0.134994"/>
     <geometry>
-      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller3.9_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller3_9_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
-<link name="wheel_roller3.7_1">
+<link name="wheel_roller3_7_1">
   <inertial>
     <origin rpy="0 0 0" xyz="-1.8441451393041985e-07 4.051678654040658e-07 3.0162779186826416e-07"/>
     <mass value="0.002562325630105985"/>
@@ -1210,19 +1210,19 @@
   <visual>
     <origin rpy="0 0 0" xyz="-0.046834 -0.05735 -0.124387"/>
     <geometry>
-      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller3.7_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller3_7_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="-0.046834 -0.05735 -0.124387"/>
     <geometry>
-      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller3.7_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller3_7_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
-<link name="wheel_roller3.12_1">
+<link name="wheel_roller3_12_1">
   <inertial>
     <origin rpy="0 0 0" xyz="-3.487058553228173e-07 3.2944890776542834e-07 -1.7636573078350093e-07"/>
     <mass value="0.001201137707108146"/>
@@ -1231,19 +1231,19 @@
   <visual>
     <origin rpy="0 0 0" xyz="-0.037786 -0.051821 -0.113787"/>
     <geometry>
-      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller3.12_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller3_12_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="-0.037786 -0.051821 -0.113787"/>
     <geometry>
-      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller3.12_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller3_12_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
-<link name="wheel_roller3.5_1">
+<link name="wheel_roller3_5_1">
   <inertial>
     <origin rpy="0 0 0" xyz="-1.1743386530566058e-07 -2.9870810239890355e-07 6.072419653224692e-08"/>
     <mass value="0.0025623256301059998"/>
@@ -1252,19 +1252,19 @@
   <visual>
     <origin rpy="0 0 0" xyz="-0.039474 -0.037956 -0.108316"/>
     <geometry>
-      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller3.5_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller3_5_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="-0.039474 -0.037956 -0.108316"/>
     <geometry>
-      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller3.5_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller3_5_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
-<link name="wheel_roller3.10_1">
+<link name="wheel_roller3_10_1">
   <inertial>
     <origin rpy="0 0 0" xyz="-3.5748547951713894e-07 -3.6339927952586115e-07 9.819223660556542e-08"/>
     <mass value="0.0012011377071081497"/>
@@ -1273,19 +1273,19 @@
   <visual>
     <origin rpy="0 0 0" xyz="-0.041588 -0.024011 -0.103174"/>
     <geometry>
-      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller3.10_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller3_10_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="-0.041588 -0.024011 -0.103174"/>
     <geometry>
-      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller3.10_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller3_10_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
-<link name="wheel_roller3.6_1">
+<link name="wheel_roller3_6_1">
   <inertial>
     <origin rpy="0 0 0" xyz="1.5083087313155774e-07 2.6667542543483413e-07 -4.7480918546893847e-07"/>
     <mass value="0.002562325630105979"/>
@@ -1294,19 +1294,19 @@
   <visual>
     <origin rpy="0 0 0" xyz="-0.0526 -0.015213 -0.108313"/>
     <geometry>
-      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller3.6_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller3_6_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="-0.0526 -0.015213 -0.108313"/>
     <geometry>
-      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller3.6_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller3_6_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
-<link name="wheel_roller3.11_1">
+<link name="wheel_roller3_11_1">
   <inertial>
     <origin rpy="0 0 0" xyz="-3.89893147240139e-07 -6.254036898686172e-08 -3.0009009185927304e-07"/>
     <mass value="0.0012011377071081616"/>
@@ -1315,19 +1315,19 @@
   <visual>
     <origin rpy="0 0 0" xyz="-0.063764 -0.006814 -0.113781"/>
     <geometry>
-      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller3.11_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller3_11_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="-0.063764 -0.006814 -0.113781"/>
     <geometry>
-      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller3.11_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller3_11_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
-<link name="wheel_roller3.3_1">
+<link name="wheel_roller3_3_1">
   <inertial>
     <origin rpy="0 0 0" xyz="-1.8441455466866596e-07 7.146925393511361e-08 3.016277923678645e-07"/>
     <mass value="0.002562325630105982"/>
@@ -1336,19 +1336,19 @@
   <visual>
     <origin rpy="0 0 0" xyz="-0.073084 -0.011884 -0.124387"/>
     <geometry>
-      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller3.3_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller3_3_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="-0.073084 -0.011884 -0.124387"/>
     <geometry>
-      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller3.3_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller3_3_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
-<link name="wheel_roller3.8_1">
+<link name="wheel_roller3_8_1">
   <inertial>
     <origin rpy="0 0 0" xyz="-2.1682235511188974e-07 -4.6082259076707377e-07 -9.665432837424603e-08"/>
     <mass value="0.0012011377071081688"/>
@@ -1357,19 +1357,19 @@
   <visual>
     <origin rpy="0 0 0" xyz="-0.082135 -0.017421 -0.134994"/>
     <geometry>
-      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller3.8_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller3_8_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="-0.082135 -0.017421 -0.134994"/>
     <geometry>
-      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller3.8_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller3_8_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
-<link name="wheel_roller3.1_1">
+<link name="wheel_roller3_1_1">
   <inertial>
     <origin rpy="0 0 0" xyz="4.803399547975706e-07 4.311217709912496e-08 7.806529331300105e-08"/>
     <mass value="0.002562325630106003"/>
@@ -1378,14 +1378,14 @@
   <visual>
     <origin rpy="0 0 0" xyz="-0.080442 -0.031288 -0.140462"/>
     <geometry>
-      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller3.1_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller3_1_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="-0.080442 -0.031288 -0.140462"/>
     <geometry>
-      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller3.1_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://deep_ballbot_description/meshes/wheel_roller3_1_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -1675,252 +1675,252 @@
 <joint name="Rev1" type="continuous">
   <origin rpy="0 0 0" xyz="-0.025475 0.014708 0.010011"/>
   <parent link="wheel_body1_1"/>
-  <child link="wheel_roller1.2_1"/>
+  <child link="wheel_roller1_2_1"/>
   <axis xyz="0.5 0.866025 0.0"/>
 </joint>
 
 <joint name="Rev2" type="continuous">
   <origin rpy="0 0 0" xyz="-0.028248 0.002704 0.00743"/>
   <parent link="wheel_body1_1"/>
-  <child link="wheel_roller1.4_1"/>
+  <child link="wheel_roller1_4_1"/>
   <axis xyz="-0.126826 -0.926777 -0.353553"/>
 </joint>
 
 <joint name="Rev3" type="continuous">
   <origin rpy="0 0 0" xyz="-0.02928 -0.013095 -0.000596"/>
   <parent link="wheel_body1_1"/>
-  <child link="wheel_roller1.9_1"/>
+  <child link="wheel_roller1_9_1"/>
   <axis xyz="0.28033 -0.739199 -0.612372"/>
 </joint>
 
 <joint name="Rev4" type="continuous">
   <origin rpy="0 0 0" xyz="-0.020229 -0.018632 -0.011203"/>
   <parent link="wheel_body1_1"/>
-  <child link="wheel_roller1.7_1"/>
+  <child link="wheel_roller1_7_1"/>
   <axis xyz="0.612372 -0.353553 -0.707107"/>
 </joint>
 
 <joint name="Rev5" type="continuous">
   <origin rpy="0 0 0" xyz="-0.010916 -0.023703 -0.021803"/>
   <parent link="wheel_body1_1"/>
-  <child link="wheel_roller1.12_1"/>
+  <child link="wheel_roller1_12_1"/>
   <axis xyz="-0.78033 -0.126826 0.612372"/>
 </joint>
 
 <joint name="Rev6" type="continuous">
   <origin rpy="0 0 0" xyz="0.000247 -0.015308 -0.027274"/>
   <parent link="wheel_body1_1"/>
-  <child link="wheel_roller1.5_1"/>
+  <child link="wheel_roller1_5_1"/>
   <axis xyz="0.739199 0.573223 -0.353553"/>
 </joint>
 
 <joint name="Rev7" type="continuous">
   <origin rpy="0 0 0" xyz="0.011267 -0.006505 -0.032416"/>
   <parent link="wheel_body1_1"/>
-  <child link="wheel_roller1.10_1"/>
+  <child link="wheel_roller1_10_1"/>
   <axis xyz="-0.5 -0.866025 -0.0"/>
 </joint>
 
 <joint name="Rev8" type="continuous">
   <origin rpy="0 0 0" xyz="0.01338 0.00743 -0.027277"/>
   <parent link="wheel_body1_1"/>
-  <child link="wheel_roller1.6_1"/>
+  <child link="wheel_roller1_6_1"/>
   <axis xyz="-0.126826 -0.926777 -0.353553"/>
 </joint>
 
 <joint name="Rev9" type="continuous">
   <origin rpy="0 0 0" xyz="0.015072 0.021298 -0.021809"/>
   <parent link="wheel_body1_1"/>
-  <child link="wheel_roller1.11_1"/>
+  <child link="wheel_roller1_11_1"/>
   <axis xyz="0.28033 -0.739199 -0.612372"/>
 </joint>
 
 <joint name="Rev10" type="continuous">
   <origin rpy="0 0 0" xyz="0.006021 0.026834 -0.011203"/>
   <parent link="wheel_body1_1"/>
-  <child link="wheel_roller1.3_1"/>
+  <child link="wheel_roller1_3_1"/>
   <axis xyz="0.612372 -0.353553 -0.707107"/>
 </joint>
 
 <joint name="Rev11" type="continuous">
   <origin rpy="0 0 0" xyz="-0.003299 0.031905 -0.000596"/>
   <parent link="wheel_body1_1"/>
-  <child link="wheel_roller1.8_1"/>
+  <child link="wheel_roller1_8_1"/>
   <axis xyz="0.78033 0.126826 -0.612372"/>
 </joint>
 
 <joint name="Rev12" type="continuous">
   <origin rpy="0 0 0" xyz="-0.014462 0.023505 0.004872"/>
   <parent link="wheel_body1_1"/>
-  <child link="wheel_roller1.1_1"/>
+  <child link="wheel_roller1_1_1"/>
   <axis xyz="0.739199 0.573223 -0.353553"/>
 </joint>
 
 <joint name="Rev13" type="continuous">
   <origin rpy="0 0 0" xyz="0.0 -0.029416 0.010011"/>
   <parent link="wheel_body2_1"/>
-  <child link="wheel_roller2.2_1"/>
+  <child link="wheel_roller2_2_1"/>
   <axis xyz="-1.0 0.0 -0.0"/>
 </joint>
 
 <joint name="Rev14" type="continuous">
   <origin rpy="0 0 0" xyz="0.011783 -0.025815 0.00743"/>
   <parent link="wheel_body2_1"/>
-  <child link="wheel_roller2.4_1"/>
+  <child link="wheel_roller2_4_1"/>
   <axis xyz="0.866025 0.353553 -0.353553"/>
 </joint>
 
 <joint name="Rev15" type="continuous">
   <origin rpy="0 0 0" xyz="0.025981 -0.018809 -0.000596"/>
   <parent link="wheel_body2_1"/>
-  <child link="wheel_roller2.7_1"/>
+  <child link="wheel_roller2_7_1"/>
   <axis xyz="0.5 0.612372 -0.612372"/>
 </joint>
 
 <joint name="Rev16" type="continuous">
   <origin rpy="0 0 0" xyz="0.02625 -0.008202 -0.011203"/>
   <parent link="wheel_body2_1"/>
-  <child link="wheel_roller2.12_1"/>
+  <child link="wheel_roller2_12_1"/>
   <axis xyz="0.0 0.707107 -0.707107"/>
 </joint>
 
 <joint name="Rev17" type="continuous">
   <origin rpy="0 0 0" xyz="0.025986 0.002398 -0.021803"/>
   <parent link="wheel_body2_1"/>
-  <child link="wheel_roller2.9_1"/>
+  <child link="wheel_roller2_9_1"/>
   <axis xyz="0.5 -0.612372 0.612372"/>
 </joint>
 
 <joint name="Rev18" type="continuous">
   <origin rpy="0 0 0" xyz="0.013134 0.007869 -0.027274"/>
   <parent link="wheel_body2_1"/>
-  <child link="wheel_roller2.5_1"/>
+  <child link="wheel_roller2_5_1"/>
   <axis xyz="-0.866025 0.353553 -0.353553"/>
 </joint>
 
 <joint name="Rev19" type="continuous">
   <origin rpy="0 0 0" xyz="0.0 0.013011 -0.032416"/>
   <parent link="wheel_body2_1"/>
-  <child link="wheel_roller2.10_1"/>
+  <child link="wheel_roller2_10_1"/>
   <axis xyz="1.0 -0.0 -0.0"/>
 </joint>
 
 <joint name="Rev20" type="continuous">
   <origin rpy="0 0 0" xyz="-0.013125 0.007872 -0.027277"/>
   <parent link="wheel_body2_1"/>
-  <child link="wheel_roller2.6_1"/>
+  <child link="wheel_roller2_6_1"/>
   <axis xyz="0.866025 0.353553 -0.353553"/>
 </joint>
 
 <joint name="Rev21" type="continuous">
   <origin rpy="0 0 0" xyz="-0.025981 0.002404 -0.021809"/>
   <parent link="wheel_body2_1"/>
-  <child link="wheel_roller2.11_1"/>
+  <child link="wheel_roller2_11_1"/>
   <axis xyz="0.5 0.612372 -0.612372"/>
 </joint>
 
 <joint name="Rev22" type="continuous">
   <origin rpy="0 0 0" xyz="-0.02625 -0.008202 -0.011203"/>
   <parent link="wheel_body2_1"/>
-  <child link="wheel_roller2.3_1"/>
+  <child link="wheel_roller2_3_1"/>
   <axis xyz="0.0 0.707107 -0.707107"/>
 </joint>
 
 <joint name="Rev23" type="continuous">
   <origin rpy="0 0 0" xyz="-0.025981 -0.018809 -0.000596"/>
   <parent link="wheel_body2_1"/>
-  <child link="wheel_roller2.8_1"/>
+  <child link="wheel_roller2_8_1"/>
   <axis xyz="-0.5 0.612372 -0.612372"/>
 </joint>
 
 <joint name="Rev24" type="continuous">
   <origin rpy="0 0 0" xyz="-0.013125 -0.024277 0.004872"/>
   <parent link="wheel_body2_1"/>
-  <child link="wheel_roller2.1_1"/>
+  <child link="wheel_roller2_1_1"/>
   <axis xyz="-0.866025 0.353553 -0.353553"/>
 </joint>
 
 <joint name="Rev25" type="continuous">
   <origin rpy="0 0 0" xyz="0.025475 0.014708 0.010011"/>
   <parent link="wheel_body3_1"/>
-  <child link="wheel_roller3.2_1"/>
+  <child link="wheel_roller3_2_1"/>
   <axis xyz="0.5 -0.866025 -0.0"/>
 </joint>
 
 <joint name="Rev26" type="continuous">
   <origin rpy="0 0 0" xyz="0.016466 0.023112 0.00743"/>
   <parent link="wheel_body3_1"/>
-  <child link="wheel_roller3.4_1"/>
+  <child link="wheel_roller3_4_1"/>
   <axis xyz="-0.739199 0.573223 -0.353553"/>
 </joint>
 
 <joint name="Rev27" type="continuous">
   <origin rpy="0 0 0" xyz="0.003299 0.031905 -0.000596"/>
   <parent link="wheel_body3_1"/>
-  <child link="wheel_roller3.9_1"/>
+  <child link="wheel_roller3_9_1"/>
   <axis xyz="-0.78033 0.126826 -0.612372"/>
 </joint>
 
 <joint name="Rev28" type="continuous">
   <origin rpy="0 0 0" xyz="-0.006021 0.026834 -0.011203"/>
   <parent link="wheel_body3_1"/>
-  <child link="wheel_roller3.7_1"/>
+  <child link="wheel_roller3_7_1"/>
   <axis xyz="-0.612372 -0.353553 -0.707107"/>
 </joint>
 
 <joint name="Rev29" type="continuous">
   <origin rpy="0 0 0" xyz="-0.015069 0.021305 -0.021803"/>
   <parent link="wheel_body3_1"/>
-  <child link="wheel_roller3.12_1"/>
+  <child link="wheel_roller3_12_1"/>
   <axis xyz="0.28033 0.739199 0.612372"/>
 </joint>
 
 <joint name="Rev30" type="continuous">
   <origin rpy="0 0 0" xyz="-0.013381 0.00744 -0.027274"/>
   <parent link="wheel_body3_1"/>
-  <child link="wheel_roller3.5_1"/>
+  <child link="wheel_roller3_5_1"/>
   <axis xyz="0.126826 -0.926777 -0.353553"/>
 </joint>
 
 <joint name="Rev31" type="continuous">
   <origin rpy="0 0 0" xyz="-0.011267 -0.006505 -0.032416"/>
   <parent link="wheel_body3_1"/>
-  <child link="wheel_roller3.10_1"/>
+  <child link="wheel_roller3_10_1"/>
   <axis xyz="-0.5 0.866025 0.0"/>
 </joint>
 
 <joint name="Rev32" type="continuous">
   <origin rpy="0 0 0" xyz="-0.000255 -0.015303 -0.027277"/>
   <parent link="wheel_body3_1"/>
-  <child link="wheel_roller3.6_1"/>
+  <child link="wheel_roller3_6_1"/>
   <axis xyz="-0.739199 0.573223 -0.353553"/>
 </joint>
 
 <joint name="Rev33" type="continuous">
   <origin rpy="0 0 0" xyz="0.010909 -0.023702 -0.021809"/>
   <parent link="wheel_body3_1"/>
-  <child link="wheel_roller3.11_1"/>
+  <child link="wheel_roller3_11_1"/>
   <axis xyz="-0.78033 0.126826 -0.612372"/>
 </joint>
 
 <joint name="Rev34" type="continuous">
   <origin rpy="0 0 0" xyz="0.020229 -0.018632 -0.011203"/>
   <parent link="wheel_body3_1"/>
-  <child link="wheel_roller3.3_1"/>
+  <child link="wheel_roller3_3_1"/>
   <axis xyz="-0.612372 -0.353553 -0.707107"/>
 </joint>
 
 <joint name="Rev35" type="continuous">
   <origin rpy="0 0 0" xyz="0.02928 -0.013095 -0.000596"/>
   <parent link="wheel_body3_1"/>
-  <child link="wheel_roller3.8_1"/>
+  <child link="wheel_roller3_8_1"/>
   <axis xyz="-0.28033 -0.739199 -0.612372"/>
 </joint>
 
 <joint name="Rev36" type="continuous">
   <origin rpy="0 0 0" xyz="0.027587 0.000772 0.004872"/>
   <parent link="wheel_body3_1"/>
-  <child link="wheel_roller3.1_1"/>
+  <child link="wheel_roller3_1_1"/>
   <axis xyz="0.126826 -0.926777 -0.353553"/>
 </joint>
 
