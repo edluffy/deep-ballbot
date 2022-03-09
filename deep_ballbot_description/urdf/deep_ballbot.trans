@@ -1,0 +1,433 @@
+<?xml version="1.0" ?>
+<robot name="deep_ballbot" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+<transmission name="MotorJoint1_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="MotorJoint1">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="MotorJoint1_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="MotorJoint2_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="MotorJoint2">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="MotorJoint2_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="MotorJoint3_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="MotorJoint3">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="MotorJoint3_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Rev43_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Rev43">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Rev43_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Rev44_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Rev44">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Rev44_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Rev45_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Rev45">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Rev45_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Rev46_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Rev46">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Rev46_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Rev47_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Rev47">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Rev47_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Rev48_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Rev48">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Rev48_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Rev49_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Rev49">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Rev49_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Rev50_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Rev50">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Rev50_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Rev51_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Rev51">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Rev51_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Rev52_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Rev52">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Rev52_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Rev53_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Rev53">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Rev53_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Rev54_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Rev54">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Rev54_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Rev55_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Rev55">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Rev55_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Rev56_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Rev56">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Rev56_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Rev57_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Rev57">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Rev57_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Rev58_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Rev58">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Rev58_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Rev59_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Rev59">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Rev59_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Rev60_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Rev60">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Rev60_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Rev61_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Rev61">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Rev61_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Rev62_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Rev62">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Rev62_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Rev63_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Rev63">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Rev63_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Rev64_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Rev64">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Rev64_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Rev65_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Rev65">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Rev65_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Rev66_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Rev66">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Rev66_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Rev67_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Rev67">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Rev67_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Rev68_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Rev68">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Rev68_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Rev69_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Rev69">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Rev69_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Rev70_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Rev70">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Rev70_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Rev71_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Rev71">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Rev71_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Rev72_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Rev72">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Rev72_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Rev73_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Rev73">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Rev73_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Rev74_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Rev74">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Rev74_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Rev75_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Rev75">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Rev75_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Rev76_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Rev76">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Rev76_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Rev77_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Rev77">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Rev77_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Rev78_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Rev78">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Rev78_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+</robot>

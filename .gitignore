@@ -3,3 +3,4 @@
 **/.cache
 **/.direnv
 **/.envrc
+.DS_Store
