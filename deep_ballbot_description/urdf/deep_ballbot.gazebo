@@ -77,13 +77,6 @@
   <selfCollide>true</selfCollide>
 </gazebo>
 
-<gazebo reference="arduino_nano_1">
-  <material>${body_color}</material>
-  <mu1>0.2</mu1>
-  <mu2>0.2</mu2>
-  <selfCollide>true</selfCollide>
-</gazebo>
-
 <gazebo reference="rasbperry_pi_1">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
@@ -498,6 +491,13 @@
 </gazebo>
 
 <gazebo reference="top_plate_1">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="arduino_nano_1">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
