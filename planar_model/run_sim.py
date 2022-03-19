@@ -42,22 +42,32 @@ agent = LQR()
 for ep in range(1):
     state = env.reset()
     history = []
+    torques = []
     done = False
+    t = 0
     while not done:
-        env.render(stats=True)
-        action = agent.policy(state)
+        t+=1
+        env.render()
+
+        if t % 4 == 0:
+            action = agent.policy(state)
+        else:
+            action = 0
+
         state, _, done = env.step(action)
 
         history.append(state)
+        torques.append(action)
 
 print(len(history))
 norm = lambda d: d/(max(d)-min(d))
 
 history = np.array(history).T
 plt.plot(norm(history[0]), label='ball angle')
-plt.plot(norm(history[1]), label='rod angle')
-plt.plot(norm(history[2]), label='ball angular velocity')
+plt.plot(norm(history[1]), label='ball angular velocity')
+plt.plot(norm(history[2]), label='rod angle')
 plt.plot(norm(history[3]), label='rod angular velocity')
+plt.plot(norm(torques), label='torque')
 
 plt.legend()
 plt.show()

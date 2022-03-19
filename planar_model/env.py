@@ -65,7 +65,7 @@ class BallBotEnv():
 
         return self.state
 
-    def render(self, stats=False):
+    def render(self, stats=True):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
@@ -83,22 +83,21 @@ class BallBotEnv():
         pygame.display.update()
 
     def step(self, action):
-        self.action = action
+        #self.wheel.angular_velocity = np.clip(self.action, -10e10, 10e10)
+        #self.action = np.clip(self.action, -10e10, 10e10)
 
-        #self.wheel.apply_impulse_at_local_point((action*1000, 0), (0, 35))
-        #self.wheel.apply_impulse_at_local_point((-action*1000, 0), (0, 0))
-
-        print(action)
-        #action = -action*5*10e6#*-4.9*10e7
-        action = -action*5.15*10e6
-        self.wheel.torque = np.clip(action, -10e10, 10e10)
+        if action != 0:
+            #self.wheel.torque = np.clip(action*10e5, -10e10, 10e10)
+            action = np.clip(action, -10e5, 10e5)
+            self.wheel.apply_impulse_at_local_point((-action, 0), (0, 35))
+            self.wheel.apply_impulse_at_local_point((action, 0), (0, 0))
 
         self.space.step(1/120)
         self.clock.tick(120)
 
-        self.state = [self.ball.angle, self.rod.angle,
-                self.ball.angular_velocity, self.rod.angular_velocity]
-        self.done = self.done or abs(self.rod.angle) >= math.pi / 6
+        self.state = [self.ball.angle, self.ball.angular_velocity,
+                self.rod.angle, self.rod.angular_velocity]
+        self.done = self.done or abs(self.rod.angle) >= math.pi / 2
 
         self.reward += math.cos(self.rod.angle)
         return self.state, math.cos(self.rod.angle), self.done

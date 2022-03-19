@@ -12,27 +12,35 @@ theta_dot, phi_dot = dynamicsymbols('theta phi', 1)
 
 class LQR:
     def __init__(self):
-        L = self.compute_lagrangian()
-        q_dot_dot = self.compute_motion_eq(L)
-        A, B = self.get_state_space(q_dot_dot)
+        self.K = self.get_gains()
 
-        # Substitute in params
-        params = {
-                mB: 1000,
-                mW: 250,
-                mC: 500,
-                rB: 60,
-                rW: 35,
-                l: 335,
-                g: 981
-        }
+        #L = self.compute_lagrangian()
+        #q_dot_dot = self.compute_motion_eq(L)
+        #A, B = self.get_state_space(q_dot_dot)
 
-        self.A = np.array(A.evalf(subs=params).doit(), dtype=float)
-        self.B = np.array(B.evalf(subs=params).doit(), dtype=float)
+        ## Substitute in params
+        #params = {
+        #        mB: 1000,
+        #        mW: 250,
+        #        mC: 500,
+        #        rB: 60,
+        #        rW: 35,
+        #        l: 335,
+        #        g: 981
+        #}
 
-        print(self.A)
-        print('\n')
-        print(self.B)
+        #self.A = np.array(A.evalf(subs=params).doit(), dtype=float)
+        #self.B = np.array(B.evalf(subs=params).doit(), dtype=float)
+
+        #print(self.A)
+        #print('\n')
+        #print(self.B)
+
+    def get_gains(self):
+        with open('lqr_gains.txt') as f:
+            line = f.readline().split(',')
+            K = np.array([float(k) for k in line])
+        return K
 
     def compute_lagrangian(self):
         TB = mB * rB**2 * phi_dot**2
@@ -84,18 +92,21 @@ class LQR:
         return A, B
 
     def policy(self, state):
-        R = 0.1*np.eye(1)
-        #Q = 5*np.eye(4)
-        Q = np.array([
-            [10, 0, 0, 0],
-            [0, 60, 0, 0],
-            [0, 0, 10, 0],
-            [0, 0, 0, 10]
-        ])
+        #R = 0.1*np.eye(1)
+        ##Q = 5*np.eye(4)
+        #Q = np.array([
+        #    [10, 0, 0, 0],
+        #    [0, 60, 0, 0],
+        #    [0, 0, 10, 0],
+        #    [0, 0, 0, 10]
+        #])
 
-        P = linalg.solve_continuous_are(self.A, self.B, Q, R)
-        K = np.linalg.inv(R) @ (self.B.T @ P)
+        #P = linalg.solve_continuous_are(self.A, self.B, Q, R)
+        #K = np.linalg.inv(R) @ (self.B.T @ P)
 
-        u = (-K @ state)[0]
+        #K = 1e8 * np.array([-3.136, -1.5131, 0, 0])
+        #K = 1e8 * np.array([-3.1396, -1.5172, 0, -0.0002])
+
+        u = (-self.K @ state)
 
         return u
