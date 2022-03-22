@@ -1,0 +1,14 @@
+generic_hw_control_loop:
+  loop_hz: 200
+  cycle_time_error_threshold: 0.01
+
+
+hardware_interface:
+  joints:
+    - MotorJoint1
+    - MotorJoint2
+    - MotorJoint3
+
+joint_state_controller:
+  type: joint_state_controller/JointStateController
+  publish_rate: 200
