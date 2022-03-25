@@ -1,0 +1,26 @@
+deepbb_hardware_interface:
+  joint_names:
+    - MotorJoint1
+    - MotorJoint2
+    - MotorJoint3
+  # TODO: split into hardware.yaml
+
+deep_ballbot:
+  # Publish all joint states -----------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 200
+
+  # Torque Controllers -----------------------
+  Motor1_torque_controller:
+    type: effort_controllers/JointEffortController
+    joint: MotorJoint1
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  Motor2_torque_controller:
+    type: effort_controllers/JointEffortController
+    joint: MotorJoint2
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  Motor3_torque_controller:
+    type: effort_controllers/JointEffortController
+    joint: MotorJoint3
+    pid: {p: 100.0, i: 0.01, d: 10.0}
