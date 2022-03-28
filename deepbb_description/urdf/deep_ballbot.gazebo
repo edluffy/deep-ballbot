@@ -1,7 +1,9 @@
 <?xml version="1.0" ?>
 <robot name="deep_ballbot" xmlns:xacro="http://www.ros.org/wiki/xacro" >
 
-<xacro:property name="body_color" value="Gazebo/Silver" />
+<xacro:property name="body_color" value="Gazebo/Grey" />
+<xacro:property name="accent_color" value="Gazebo/White" />
+<xacro:property name="component_color" value="Gazebo/DarkGrey" />
 
 <gazebo>
   <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
@@ -10,7 +12,7 @@
 </gazebo>
 
 <gazebo reference="base_link">
-  <material>${body_color}</material>
+  <material>${component_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
@@ -18,21 +20,21 @@
 </gazebo>
 
 <gazebo reference="base_shell1_1">
-  <material>${body_color}</material>
+  <material>${accent_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="base_shell2_1">
-  <material>${body_color}</material>
+  <material>${accent_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="base_shell3_1">
-  <material>${body_color}</material>
+  <material>${accent_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
@@ -74,7 +76,7 @@
 </gazebo>
 
 <gazebo reference="breadboard_1">
-  <material>${body_color}</material>
+  <material>${accent_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
@@ -130,84 +132,84 @@
 </gazebo>
 
 <gazebo reference="arduino1_1">
-  <material>${body_color}</material>
+  <material>${component_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="arduino2_1">
-  <material>${body_color}</material>
+  <material>${component_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="arduino3_1">
-  <material>${body_color}</material>
+  <material>${component_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="motor_stator1_1">
-  <material>${body_color}</material>
+  <material>${component_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="motor_stator2_1">
-  <material>${body_color}</material>
+  <material>${component_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="motor_stator3_1">
-  <material>${body_color}</material>
+  <material>${component_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="motor_rotor1_1">
-  <material>${body_color}</material>
+  <material>${component_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="motor_rotor2_1">
-  <material>${body_color}</material>
+  <material>${component_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="motor_rotor3_1">
-  <material>${body_color}</material>
+  <material>${component_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="wheel_body1_1">
-  <material>${body_color}</material>
+  <material>${accent_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="wheel_body2_1">
-  <material>${body_color}</material>
+  <material>${accent_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="wheel_body3_1">
-  <material>${body_color}</material>
+  <material>${accent_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
@@ -494,7 +496,7 @@
 </gazebo>
 
 <gazebo reference="top_plate_1">
-  <material>${body_color}</material>
+  <material>${accent_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
