@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>deepbb_control</name>
+  <name>deepbb_gazebo</name>
   <version>0.0.0</version>
-  <description>The deepbb_control package</description>
+  <description>The deepbb_gazebo package</description>
 
   <!-- One maintainer tag required, multiple allowed, one person per tag -->
   <!-- Example:  -->
@@ -19,7 +19,7 @@
   <!-- Url tags are optional, but multiple are allowed, one per tag -->
   <!-- Optional attribute type can be: website, bugtracker, or repository -->
   <!-- Example: -->
-  <!-- <url type="website">http://wiki.ros.org/deepbb_control</url> -->
+  <!-- <url type="website">http://wiki.ros.org/deepbb_gazebo</url> -->
 
 
   <!-- Author tags are optional, multiple are allowed, one per tag -->
@@ -56,33 +56,4 @@
     <!-- Other tools can request additional information be placed here -->
 
   </export>
-
-  <build_depend>roscpp</build_depend>
-  <build_depend>message_generation</build_depend>
-  <build_depend>cmake_modules</build_depend>
-  <build_depend>hardware_interface</build_depend>
-  <build_depend>controller_manager</build_depend>
-  <build_depend>control_msgs</build_depend>
-  <build_depend>urdf</build_depend>
-  <build_depend>std_msgs</build_depend>
-  <build_depend>ros_control_boilerplate</build_depend>
-  <build_export_depend>roscpp</build_export_depend>
-  <build_export_depend>message_generation</build_export_depend>
-  <build_export_depend>cmake_modules</build_export_depend>
-  <build_export_depend>hardware_interface</build_export_depend>
-  <build_export_depend>controller_manager</build_export_depend>
-  <build_export_depend>control_msgs</build_export_depend>
-  <build_export_depend>urdf</build_export_depend>
-  <build_export_depend>std_msgs</build_export_depend>
-  <build_export_depend>ros_control_boilerplate</build_export_depend>
-  <exec_depend>roscpp</exec_depend>
-  <exec_depend>message_generation</exec_depend>
-  <exec_depend>cmake_modules</exec_depend>
-  <exec_depend>hardware_interface</exec_depend>
-  <exec_depend>controller_manager</exec_depend>
-  <exec_depend>control_msgs</exec_depend>
-  <exec_depend>urdf</exec_depend>
-  <exec_depend>std_msgs</exec_depend>
-  <exec_depend>ros_control_boilerplate</exec_depend>
-  <exec_depend>message_runtime</exec_depend>
 </package>

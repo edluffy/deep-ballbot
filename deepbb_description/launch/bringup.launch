@@ -1,40 +1,67 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" ?>
 <launch>
 
-  <arg name="use_hardware" default="true"/>
-  <arg name="controller_to_spawn" default="Motor1_torque_controller Motor2_torque_controller Motor3_torque_controller" />
-  <arg name="rvizconfig" default="$(find deepbb_description)/rviz/urdf.rviz"/>
+  <arg name="robot_sim" default="true"/>
 
+  <arg name="paused" default="false"/>
+  <arg name="use_sim_time" default="true"/>
+  <arg name="gui" default="true"/>
+  <arg name="headless" default="false"/>
+  <arg name="debug" default="false" />
+
+  <!-- Global -->
+  <!-- Load the URDF to the parameter server -->
   <param name="robot_description" command="$(find xacro)/xacro $(find deepbb_description)/urdf/deep_ballbot.xacro" />
 
-
-  <!-- Load joint controller configurations from YAML file to parameter server -->
-  <rosparam command="load" file="$(find deepbb_description)/config/deepbb_controller.yaml" />
-
-  <node name="deepbb_hardware_interface" pkg="deepbb_hardware_interface" type="deepbb_hardware_interface_node"/>
-
-  <!-- Load robot state publisher -->
-  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher">
-    <param name="ignore_timestamp" type="bool" value="true"/>
+  <!-- merge joint states and publish as /joint_states -->
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+    <param name="use_gui" value="false"/>
+    <!-- listens to each part -->
+    <rosparam param="source_list">[deep_ballbot/joint_states]</rosparam>
   </node>
 
-  <!-- Load controllers -->
-  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen"
-    args="joint_state_controller $(arg controller_to_spawn)"/>
+  <!-- Convert joint states to /tf tranforms -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
 
-  <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)"/>
+  <!-- Load all available controllers -->
+  <rosparam command="load" file="$(find deepbb_description)/config/deepbb_controller.yaml" />
 
-  <!-- Sim stuff -->
-  <group unless="$(arg use_hardware)">
-    <param command="$(find xacro)/xacro $(find deepbb_description)/urdf/deep_ballbot.xacro" name="robot_description"/>
-    <node args="-param robot_description -urdf -model deep_ballbot" name="spawn_urdf" pkg="gazebo_ros" type="spawn_model"/>
+  <!-- SIM STUFF-->
+  <group if="$(arg robot_sim)">
+
+    <!-- Load simulation environment -->
     <include file="$(find gazebo_ros)/launch/empty_world.launch">
-      <arg name="paused" value="true"/>
-      <arg name="use_sim_time" value="true"/>
-      <arg name="gui" value="true"/>
-      <arg name="headless" value="false"/>
-      <arg name="debug" value="false"/>
+      <arg name="world_name" value="$(find deepbb_gazebo)/worlds/deepbb.world"/>
+      <arg name="debug" value="$(arg debug)" />
+      <arg name="gui" value="$(arg gui)" />
+      <arg name="paused" value="$(arg paused)"/>
+      <arg name="use_sim_time" value="$(arg use_sim_time)"/>
+      <arg name="headless" value="$(arg headless)"/>
     </include>
+
+    <!-- (Load hardware interface sim) Run a python script to the send a service call to gazebo_ros to spawn a URDF robot -->
+    <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false"
+        output="screen"  args="-urdf -model deep_ballbot -param robot_description -z 0.10"/>
+
+  </group>
+
+  <group ns="deep_ballbot">
+    <!-- Load a copy of the URDF within the namespace-->
+    <param name="robot_description" command="$(find xacro)/xacro $(find deepbb_description)/urdf/deep_ballbot.xacro" />
+
+    <!-- HARDWARE STUFF-->
+    <group unless="$(arg robot_sim)">
+
+      <!-- Load hardware interface real -->
+      <node name="deepbb_hardware_interface" pkg="deepbb_hardware_interface"
+          type="deepbb_hardware_interface_node" output="screen"/>
+
+    </group>
+
+    <!-- Load controller manager -->
+    <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen"
+      args="joint_state_controller Motor1_torque_controller Motor2_torque_controller Motor3_torque_controller"/>
+
   </group>
 
 </launch>
