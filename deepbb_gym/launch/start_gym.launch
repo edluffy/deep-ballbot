@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<launch>
+  <arg name="train" default="true"/>
+  <arg name="rviz" default="true"/>
+
+  <!-- launch rviz -->
+  <group if="$(arg rviz)">
+    <node name="rviz" pkg="rviz" required="true" type="rviz"/>
+  </group>
+
+  <!-- launch trainer -->
+  <group if="$(arg train)">
+    <node pkg="deepbb_gym" name="deepbb_trainer" type="train.py" output="screen"/>
+  </group>
+</launch>

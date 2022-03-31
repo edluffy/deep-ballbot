@@ -12,15 +12,15 @@ deep_ballbot:
     publish_rate: 200
 
   # Torque Controllers -----------------------
-  Motor1_torque_controller:
+  motor1_torque_controller:
     type: effort_controllers/JointEffortController
     joint: MotorJoint1
     pid: {p: 100.0, i: 0.01, d: 10.0}
-  Motor2_torque_controller:
+  motor2_torque_controller:
     type: effort_controllers/JointEffortController
     joint: MotorJoint2
     pid: {p: 100.0, i: 0.01, d: 10.0}
-  Motor3_torque_controller:
+  motor3_torque_controller:
     type: effort_controllers/JointEffortController
     joint: MotorJoint3
     pid: {p: 100.0, i: 0.01, d: 10.0}
