@@ -138,20 +138,33 @@ class DeepBBEnv(robot_gazebo_env.RobotGazeboEnv):
         self.publish_torque(torques[0], self._motor1_torque_pub)
         self.publish_torque(torques[1], self._motor2_torque_pub)
         self.publish_torque(torques[2], self._motor3_torque_pub)
+        self.wait_to_reach_torques(torques)
 
     def publish_torque(self, torque, pub):
         torque_msg = Float64()
         torque_msg.data = torque
         pub.publish(torque_msg)
 
-    def wait_for_torque(self, torques):
-        pass
-        #rate = rospy.Rate(10)
-        #start_wait_time = rospy.get_rostime().to_sec()
-        #end_wait_time = 0.0
-        #bound = 0.01
+    def wait_to_reach_torques(self, target):
+        rate = rospy.Rate(10)
+        start_time = rospy.get_rostime().to_sec()
+        end_time = 0.0
+        bound = 0.001
 
-        #while not rospy.is_shutdown():
+        while not rospy.is_shutdown():
+            joint_states = self._check_joint_states_ready()
+            actual = joint_states.effort
+
+            if (actual[0]<=target[0]+bound and actual[0]>=target[0]-bound
+            and actual[1]<=target[1]+bound and actual[1]>=target[1]-bound
+            and actual[2]<=target[2]+bound and actual[2]>=target[2]-bound):
+                end_time = rospy.get_rostime().to_sec()
+                break
+            rate.sleep()
+
+        wait_time = end_time-start_time
+        rospy.logdebug('Torque wait time:' + str(wait_time))
+        return wait_time
 
     def get_joints(self):
         return self.joints

@@ -2,6 +2,7 @@ from gym import spaces
 import deepbb_env
 from gym.envs.registration import register
 import rospy
+import math
 import numpy as np
 from tf.transformations import euler_from_quaternion
 
@@ -24,9 +25,6 @@ class DeepBBBalanceEnv(deepbb_env.DeepBBEnv):
         3      Angular Velocity x
         4      Angular Velocity y
         5      Angular Velocity z
-        6      Linear Acceleration x
-        7      Linear Acceleration y
-        8      Linear Acceleration z
 
     Actions:
         Type: Box(3)
@@ -38,19 +36,14 @@ class DeepBBBalanceEnv(deepbb_env.DeepBBEnv):
     Reward:
     """
     def __init__(self):
-        number_actions = 3
-        self.action_space = spaces.Discrete(number_actions)
+        o_high = np.ones(6)
+        self.observation_space = spaces.Box(-o_high, o_high)
 
-        high = np.ones(9)
-        self.observation_space = spaces.Box(-high, high)
+        a_high = np.array([0.2, 0.2, 0.2])
+        self.action_space = spaces.Box(-a_high, a_high)
 
         self.max_torque = 1.0
         self.min_torque = -1.0
-
-        self.max_lean_angle = 0.5
-        self.max_angular_velocity = 10
-
-        self.end_episode_penalty = -10
 
         super(DeepBBBalanceEnv, self).__init__()
 
@@ -84,60 +77,28 @@ class DeepBBBalanceEnv(deepbb_env.DeepBBEnv):
             self.imu.angular_velocity.x,
             self.imu.angular_velocity.y,
             self.imu.angular_velocity.z,
-            self.joints.position[0],
-            self.joints.position[1],
-            self.joints.position[2],
-            self.joints.velocity[0],
-            self.joints.velocity[1],
-            self.joints.velocity[2],
         ]
 
         return obs
 
     def _is_done(self, obs):
-        # Unbounded yaw is ok
-        roll = obs[0]
-        pitch = obs[1]
-
-        angular_velocity_x = obs[3]
-        angular_velocity_y = obs[4]
-        angular_velocity_z = obs[5]
+        roll, pitch, yaw = obs[:3]
+        tilt_angle = math.atan(math.sqrt(math.tan(roll)**2 + math.tan(pitch)**2))
 
         done = False
 
-        if abs(roll) > self.max_lean_angle:
-            rospy.logerr("Roll exceeded maximum lean angle=>"+str(roll))
-            done = True
-
-        if abs(pitch) > self.max_lean_angle:
-            rospy.logerr("Pitch exceeded maximum lean angle=>"+str(pitch))
-            done = True
-
-        if abs(angular_velocity_x) > self.max_angular_velocity:
-            rospy.logerr("Angular velocity in x exceeded the maximum=>"\
-                    +str(angular_velocity_x))
-            done = True
-
-        if abs(angular_velocity_y) > self.max_angular_velocity:
-            rospy.logerr("Angular velocity in y exceeded the maximum=>"\
-                    +str(angular_velocity_y))
-            done = True
-
-        if abs(angular_velocity_z) > self.max_angular_velocity:
-            rospy.logerr("Angular velocity in z exceeded the maximum=>"\
-                    +str(angular_velocity_z))
+        if tilt_angle > 0.524:
             done = True
 
         return done
 
     def _compute_reward(self, obs, done):
-        roll = obs[0]
-        pitch = obs[1]
+        roll, pitch, yaw = obs[:3]
+        tilt_angle = math.atan(math.sqrt(math.tan(roll)**2 + math.tan(pitch)**2))
 
-        if not done:
-            reward = 1-abs(roll + pitch)
-        else:
-            reward = self.end_episode_penalty
+        reward = 0.524-tilt_angle
+        if reward < 0.2:
+            reward = 0
 
         return reward
 

@@ -2,6 +2,9 @@
 import rospy
 import gym
 import deepbb_balance_env
+import numpy as np
+
+from agents import ddpg
 
 # To run as fast as possible:
 # roslaunch tiago_gym start_training.launch gazebo:=false
@@ -11,16 +14,18 @@ if __name__ == '__main__':
     rospy.init_node('deepbb_gym')
 
     env = gym.make('DeepBBBalanceEnv-v0')
+    o_dims = len(env.observation_space.sample())
+    a_dims = env.action_space.shape[0]
+    a_high = env.action_space.high
 
-    for i in range(10):
-        env.reset()
-        done = False
-        print('next episode')
-        while not done:
-            next_state, reward, done, _ = env.step([0.1, 0.1, 0.1])
+    agent = ddpg.DDPG(env, o_dims, a_dims, a_high)
+    agent.run(9999)
 
-            state = next_state
+    #for i in range(10):
+    #    env.reset()
+    #    done = False
+    #    while not done:
+    #        action = np.random.uniform(-1, 1, 3)
+    #        next_state, reward, done, _ = env.step(action)
 
-
-    #agent = dqn.DQN(env, input_size=o_dims, output_size=o_dims, alpha=0.01, epsilon_decay=0.95)
-    #agent.run(100)
+    #        state = next_state
