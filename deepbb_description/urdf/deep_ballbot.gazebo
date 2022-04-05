@@ -228,253 +228,253 @@
 
 <gazebo reference="wheel_roller1_2_1">
   <material>${body_color}</material>
-  <mu1>0.2</mu1>
-  <mu2>0.2</mu2>
+  <mu1>1.0</mu1>
+  <mu2>1.0</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="wheel_roller1_4_1">
   <material>${body_color}</material>
-  <mu1>0.2</mu1>
-  <mu2>0.2</mu2>
+  <mu1>1.0</mu1>
+  <mu2>1.0</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="wheel_roller1_9_1">
   <material>${body_color}</material>
-  <mu1>0.2</mu1>
-  <mu2>0.2</mu2>
+  <mu1>1.0</mu1>
+  <mu2>1.0</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="wheel_roller1_7_1">
   <material>${body_color}</material>
-  <mu1>0.2</mu1>
-  <mu2>0.2</mu2>
+  <mu1>1.0</mu1>
+  <mu2>1.0</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="wheel_roller1_12_1">
   <material>${body_color}</material>
-  <mu1>0.2</mu1>
-  <mu2>0.2</mu2>
+  <mu1>1.0</mu1>
+  <mu2>1.0</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="wheel_roller1_5_1">
   <material>${body_color}</material>
-  <mu1>0.2</mu1>
-  <mu2>0.2</mu2>
+  <mu1>1.0</mu1>
+  <mu2>1.0</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="wheel_roller1_10_1">
   <material>${body_color}</material>
-  <mu1>0.2</mu1>
-  <mu2>0.2</mu2>
+  <mu1>1.0</mu1>
+  <mu2>1.0</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="wheel_roller1_6_1">
   <material>${body_color}</material>
-  <mu1>0.2</mu1>
-  <mu2>0.2</mu2>
+  <mu1>1.0</mu1>
+  <mu2>1.0</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="wheel_roller1_11_1">
   <material>${body_color}</material>
-  <mu1>0.2</mu1>
-  <mu2>0.2</mu2>
+  <mu1>1.0</mu1>
+  <mu2>1.0</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="wheel_roller1_3_1">
   <material>${body_color}</material>
-  <mu1>0.2</mu1>
-  <mu2>0.2</mu2>
+  <mu1>1.0</mu1>
+  <mu2>1.0</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="wheel_roller1_8_1">
   <material>${body_color}</material>
-  <mu1>0.2</mu1>
-  <mu2>0.2</mu2>
+  <mu1>1.0</mu1>
+  <mu2>1.0</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="wheel_roller1_1_1">
   <material>${body_color}</material>
-  <mu1>0.2</mu1>
-  <mu2>0.2</mu2>
+  <mu1>1.0</mu1>
+  <mu2>1.0</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="wheel_roller2_2_1">
   <material>${body_color}</material>
-  <mu1>0.2</mu1>
-  <mu2>0.2</mu2>
+  <mu1>1.0</mu1>
+  <mu2>1.0</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="wheel_roller2_4_1">
   <material>${body_color}</material>
-  <mu1>0.2</mu1>
-  <mu2>0.2</mu2>
+  <mu1>1.0</mu1>
+  <mu2>1.0</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="wheel_roller2_7_1">
   <material>${body_color}</material>
-  <mu1>0.2</mu1>
-  <mu2>0.2</mu2>
+  <mu1>1.0</mu1>
+  <mu2>1.0</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="wheel_roller2_12_1">
   <material>${body_color}</material>
-  <mu1>0.2</mu1>
-  <mu2>0.2</mu2>
+  <mu1>1.0</mu1>
+  <mu2>1.0</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="wheel_roller2_9_1">
   <material>${body_color}</material>
-  <mu1>0.2</mu1>
-  <mu2>0.2</mu2>
+  <mu1>1.0</mu1>
+  <mu2>1.0</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="wheel_roller2_5_1">
   <material>${body_color}</material>
-  <mu1>0.2</mu1>
-  <mu2>0.2</mu2>
+  <mu1>1.0</mu1>
+  <mu2>1.0</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="wheel_roller2_10_1">
   <material>${body_color}</material>
-  <mu1>0.2</mu1>
-  <mu2>0.2</mu2>
+  <mu1>1.0</mu1>
+  <mu2>1.0</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="wheel_roller2_6_1">
   <material>${body_color}</material>
-  <mu1>0.2</mu1>
-  <mu2>0.2</mu2>
+  <mu1>1.0</mu1>
+  <mu2>1.0</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="wheel_roller2_11_1">
   <material>${body_color}</material>
-  <mu1>0.2</mu1>
-  <mu2>0.2</mu2>
+  <mu1>1.0</mu1>
+  <mu2>1.0</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="wheel_roller2_3_1">
   <material>${body_color}</material>
-  <mu1>0.2</mu1>
-  <mu2>0.2</mu2>
+  <mu1>1.0</mu1>
+  <mu2>1.0</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="wheel_roller2_8_1">
   <material>${body_color}</material>
-  <mu1>0.2</mu1>
-  <mu2>0.2</mu2>
+  <mu1>1.0</mu1>
+  <mu2>1.0</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="wheel_roller2_1_1">
   <material>${body_color}</material>
-  <mu1>0.2</mu1>
-  <mu2>0.2</mu2>
+  <mu1>1.0</mu1>
+  <mu2>1.0</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="wheel_roller3_2_1">
   <material>${body_color}</material>
-  <mu1>0.2</mu1>
-  <mu2>0.2</mu2>
+  <mu1>1.0</mu1>
+  <mu2>1.0</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="wheel_roller3_4_1">
   <material>${body_color}</material>
-  <mu1>0.2</mu1>
-  <mu2>0.2</mu2>
+  <mu1>1.0</mu1>
+  <mu2>1.0</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="wheel_roller3_9_1">
   <material>${body_color}</material>
-  <mu1>0.2</mu1>
-  <mu2>0.2</mu2>
+  <mu1>1.0</mu1>
+  <mu2>1.0</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="wheel_roller3_7_1">
   <material>${body_color}</material>
-  <mu1>0.2</mu1>
-  <mu2>0.2</mu2>
+  <mu1>1.0</mu1>
+  <mu2>1.0</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="wheel_roller3_12_1">
   <material>${body_color}</material>
-  <mu1>0.2</mu1>
-  <mu2>0.2</mu2>
+  <mu1>1.0</mu1>
+  <mu2>1.0</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="wheel_roller3_5_1">
   <material>${body_color}</material>
-  <mu1>0.2</mu1>
-  <mu2>0.2</mu2>
+  <mu1>1.0</mu1>
+  <mu2>1.0</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="wheel_roller3_10_1">
   <material>${body_color}</material>
-  <mu1>0.2</mu1>
-  <mu2>0.2</mu2>
+  <mu1>1.0</mu1>
+  <mu2>1.0</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="wheel_roller3_6_1">
   <material>${body_color}</material>
-  <mu1>0.2</mu1>
-  <mu2>0.2</mu2>
+  <mu1>1.0</mu1>
+  <mu2>1.0</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="wheel_roller3_11_1">
   <material>${body_color}</material>
-  <mu1>0.2</mu1>
-  <mu2>0.2</mu2>
+  <mu1>1.0</mu1>
+  <mu2>1.0</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="wheel_roller3_3_1">
   <material>${body_color}</material>
-  <mu1>0.2</mu1>
-  <mu2>0.2</mu2>
+  <mu1>1.0</mu1>
+  <mu2>1.0</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="wheel_roller3_8_1">
   <material>${body_color}</material>
-  <mu1>0.2</mu1>
-  <mu2>0.2</mu2>
+  <mu1>1.0</mu1>
+  <mu2>1.0</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="wheel_roller3_1_1">
   <material>${body_color}</material>
-  <mu1>0.2</mu1>
-  <mu2>0.2</mu2>
+  <mu1>1.0</mu1>
+  <mu2>1.0</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 

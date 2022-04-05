@@ -1,9 +1,9 @@
 <?xml version="1.0" ?>
 <robot name="deep_ballbot" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-<xacro:include filename="$(find deepbb_description)/urdf/materials.xacro" />
-<xacro:include filename="$(find deepbb_description)/urdf/deep_ballbot.trans" />
-<xacro:include filename="$(find deepbb_description)/urdf/deep_ballbot.gazebo" />
+<xacro:include filename="$(find deep_ballbot_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find deep_ballbot_description)/urdf/deep_ballbot.trans" />
+<xacro:include filename="$(find deep_ballbot_description)/urdf/deep_ballbot.gazebo" />
 <link name="base_link">
   <inertial>
     <origin rpy="0 0 0" xyz="7.650202289024707e-17 7.328088508434192e-16 0.19082500000000008"/>
@@ -15,7 +15,7 @@
     <geometry>
       <mesh filename="file://$(find deepbb_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="black"/>
+    <material name="grey"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -36,7 +36,7 @@
     <geometry>
       <mesh filename="file://$(find deepbb_description)/meshes/base_shell1_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="white"/>
+    <material name="grey"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="-0.0 -0.0 -0.040825"/>
@@ -57,7 +57,7 @@
     <geometry>
       <mesh filename="file://$(find deepbb_description)/meshes/base_shell2_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="white"/>
+    <material name="grey"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="-0.0 -0.0 -0.040825"/>
@@ -78,7 +78,7 @@
     <geometry>
       <mesh filename="file://$(find deepbb_description)/meshes/base_shell3_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="white"/>
+    <material name="grey"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="-0.0 -0.0 -0.040825"/>
@@ -204,7 +204,7 @@
     <geometry>
       <mesh filename="file://$(find deepbb_description)/meshes/breadboard_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="white"/>
+    <material name="grey"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="0.0 0.047631 -0.159825"/>
@@ -225,7 +225,7 @@
     <geometry>
       <mesh filename="file://$(find deepbb_description)/meshes/rasbperry_pi_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="black"/>
+    <material name="grey"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="0.0 -0.0105 -0.159825"/>
@@ -372,7 +372,7 @@
     <geometry>
       <mesh filename="file://$(find deepbb_description)/meshes/arduino1_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="black"/>
+    <material name="grey"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="0.047078 -0.010299 -0.112825"/>
@@ -393,7 +393,7 @@
     <geometry>
       <mesh filename="file://$(find deepbb_description)/meshes/arduino2_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="black"/>
+    <material name="grey"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="-0.01462 0.04592 -0.112825"/>
@@ -414,7 +414,7 @@
     <geometry>
       <mesh filename="file://$(find deepbb_description)/meshes/arduino3_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="black"/>
+    <material name="grey"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="-0.032458 -0.035622 -0.112825"/>
@@ -435,7 +435,7 @@
     <geometry>
       <mesh filename="file://$(find deepbb_description)/meshes/motor_stator1_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="black"/>
+    <material name="grey"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="0.051386 -0.029667 -0.067224"/>
@@ -456,7 +456,7 @@
     <geometry>
       <mesh filename="file://$(find deepbb_description)/meshes/motor_stator2_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="black"/>
+    <material name="grey"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="-0.0 0.059335 -0.067224"/>
@@ -477,7 +477,7 @@
     <geometry>
       <mesh filename="file://$(find deepbb_description)/meshes/motor_stator3_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="black"/>
+    <material name="grey"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="-0.051386 -0.029667 -0.067224"/>
@@ -498,7 +498,7 @@
     <geometry>
       <mesh filename="file://$(find deepbb_description)/meshes/motor_rotor1_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="black"/>
+    <material name="grey"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="0.041588 -0.024011 -0.047426"/>
@@ -519,7 +519,7 @@
     <geometry>
       <mesh filename="file://$(find deepbb_description)/meshes/motor_rotor2_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="black"/>
+    <material name="grey"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="-0.0 0.048021 -0.047426"/>
@@ -540,7 +540,7 @@
     <geometry>
       <mesh filename="file://$(find deepbb_description)/meshes/motor_rotor3_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="black"/>
+    <material name="grey"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="-0.041588 -0.024011 -0.047426"/>
@@ -561,7 +561,7 @@
     <geometry>
       <mesh filename="file://$(find deepbb_description)/meshes/wheel_body1_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="white"/>
+    <material name="grey"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="0.05261 -0.030375 -0.034698"/>
@@ -582,7 +582,7 @@
     <geometry>
       <mesh filename="file://$(find deepbb_description)/meshes/wheel_body2_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="white"/>
+    <material name="grey"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="-0.0 0.060749 -0.034698"/>
@@ -603,7 +603,7 @@
     <geometry>
       <mesh filename="file://$(find deepbb_description)/meshes/wheel_body3_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="white"/>
+    <material name="grey"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="-0.05261 -0.030375 -0.034698"/>
@@ -1380,7 +1380,7 @@
     <geometry>
       <mesh filename="file://$(find deepbb_description)/meshes/simplefocshield1_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="black"/>
+    <material name="grey"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="0.048464 -0.009499 -0.112825"/>
@@ -1401,7 +1401,7 @@
     <geometry>
       <mesh filename="file://$(find deepbb_description)/meshes/simplefocshield2_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="black"/>
+    <material name="grey"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="-0.016006 0.04672 -0.112825"/>
@@ -1422,7 +1422,7 @@
     <geometry>
       <mesh filename="file://$(find deepbb_description)/meshes/simplefocshield3_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="black"/>
+    <material name="grey"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="-0.032458 -0.037222 -0.112825"/>
@@ -1464,7 +1464,7 @@
     <geometry>
       <mesh filename="file://$(find deepbb_description)/meshes/top_plate_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="white"/>
+    <material name="grey"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="0.023921 0.013811 -0.156825"/>
@@ -1485,7 +1485,7 @@
     <geometry>
       <mesh filename="file://$(find deepbb_description)/meshes/arduino_nano_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="black"/>
+    <material name="grey"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="0.0 0.030131 -0.167825"/>
@@ -1671,7 +1671,6 @@
   <parent link="wheel_body1_1"/>
   <child link="wheel_roller1_2_1"/>
   <axis xyz="0.5 0.866025 0.0"/>
-  <dynamics damping="0.0"/>
 </joint>
 
 <joint name="Rev2" type="continuous">
@@ -1679,7 +1678,6 @@
   <parent link="wheel_body1_1"/>
   <child link="wheel_roller1_4_1"/>
   <axis xyz="-0.126826 -0.926777 -0.353553"/>
-  <dynamics damping="0.0"/>
 </joint>
 
 <joint name="Rev3" type="continuous">
@@ -1687,7 +1685,6 @@
   <parent link="wheel_body1_1"/>
   <child link="wheel_roller1_9_1"/>
   <axis xyz="0.28033 -0.739199 -0.612372"/>
-  <dynamics damping="0.0"/>
 </joint>
 
 <joint name="Rev4" type="continuous">
@@ -1695,7 +1692,6 @@
   <parent link="wheel_body1_1"/>
   <child link="wheel_roller1_7_1"/>
   <axis xyz="0.612372 -0.353553 -0.707107"/>
-  <dynamics damping="0.0"/>
 </joint>
 
 <joint name="Rev5" type="continuous">
@@ -1703,7 +1699,6 @@
   <parent link="wheel_body1_1"/>
   <child link="wheel_roller1_12_1"/>
   <axis xyz="-0.78033 -0.126826 0.612372"/>
-  <dynamics damping="0.0"/>
 </joint>
 
 <joint name="Rev6" type="continuous">
@@ -1711,7 +1706,6 @@
   <parent link="wheel_body1_1"/>
   <child link="wheel_roller1_5_1"/>
   <axis xyz="0.739199 0.573223 -0.353553"/>
-  <dynamics damping="0.0"/>
 </joint>
 
 <joint name="Rev7" type="continuous">
@@ -1719,7 +1713,6 @@
   <parent link="wheel_body1_1"/>
   <child link="wheel_roller1_10_1"/>
   <axis xyz="-0.5 -0.866025 0.0"/>
-  <dynamics damping="0.0"/>
 </joint>
 
 <joint name="Rev8" type="continuous">
@@ -1727,7 +1720,6 @@
   <parent link="wheel_body1_1"/>
   <child link="wheel_roller1_6_1"/>
   <axis xyz="-0.126826 -0.926777 -0.353553"/>
-  <dynamics damping="0.0"/>
 </joint>
 
 <joint name="Rev9" type="continuous">
@@ -1735,7 +1727,6 @@
   <parent link="wheel_body1_1"/>
   <child link="wheel_roller1_11_1"/>
   <axis xyz="0.28033 -0.739199 -0.612372"/>
-  <dynamics damping="0.0"/>
 </joint>
 
 <joint name="Rev10" type="continuous">
@@ -1743,7 +1734,6 @@
   <parent link="wheel_body1_1"/>
   <child link="wheel_roller1_3_1"/>
   <axis xyz="0.612372 -0.353553 -0.707107"/>
-  <dynamics damping="0.0"/>
 </joint>
 
 <joint name="Rev11" type="continuous">
@@ -1751,7 +1741,6 @@
   <parent link="wheel_body1_1"/>
   <child link="wheel_roller1_8_1"/>
   <axis xyz="0.78033 0.126826 -0.612372"/>
-  <dynamics damping="0.0"/>
 </joint>
 
 <joint name="Rev12" type="continuous">
@@ -1759,7 +1748,6 @@
   <parent link="wheel_body1_1"/>
   <child link="wheel_roller1_1_1"/>
   <axis xyz="0.739199 0.573223 -0.353553"/>
-  <dynamics damping="0.0"/>
 </joint>
 
 <joint name="Rev13" type="continuous">
@@ -1767,7 +1755,6 @@
   <parent link="wheel_body2_1"/>
   <child link="wheel_roller2_2_1"/>
   <axis xyz="-1.0 0.0 0.0"/>
-  <dynamics damping="0.0"/>
 </joint>
 
 <joint name="Rev14" type="continuous">
@@ -1775,7 +1762,6 @@
   <parent link="wheel_body2_1"/>
   <child link="wheel_roller2_4_1"/>
   <axis xyz="0.866025 0.353553 -0.353553"/>
-  <dynamics damping="0.0"/>
 </joint>
 
 <joint name="Rev15" type="continuous">
@@ -1783,7 +1769,6 @@
   <parent link="wheel_body2_1"/>
   <child link="wheel_roller2_7_1"/>
   <axis xyz="0.5 0.612372 -0.612372"/>
-  <dynamics damping="0.0"/>
 </joint>
 
 <joint name="Rev16" type="continuous">
@@ -1791,7 +1776,6 @@
   <parent link="wheel_body2_1"/>
   <child link="wheel_roller2_12_1"/>
   <axis xyz="0.0 0.707107 -0.707107"/>
-  <dynamics damping="0.0"/>
 </joint>
 
 <joint name="Rev17" type="continuous">
@@ -1799,7 +1783,6 @@
   <parent link="wheel_body2_1"/>
   <child link="wheel_roller2_9_1"/>
   <axis xyz="0.5 -0.612372 0.612372"/>
-  <dynamics damping="0.0"/>
 </joint>
 
 <joint name="Rev18" type="continuous">
@@ -1807,7 +1790,6 @@
   <parent link="wheel_body2_1"/>
   <child link="wheel_roller2_5_1"/>
   <axis xyz="-0.866025 0.353553 -0.353553"/>
-  <dynamics damping="0.0"/>
 </joint>
 
 <joint name="Rev19" type="continuous">
@@ -1815,7 +1797,6 @@
   <parent link="wheel_body2_1"/>
   <child link="wheel_roller2_10_1"/>
   <axis xyz="1.0 -0.0 0.0"/>
-  <dynamics damping="0.0"/>
 </joint>
 
 <joint name="Rev20" type="continuous">
@@ -1823,7 +1804,6 @@
   <parent link="wheel_body2_1"/>
   <child link="wheel_roller2_6_1"/>
   <axis xyz="0.866025 0.353553 -0.353553"/>
-  <dynamics damping="0.0"/>
 </joint>
 
 <joint name="Rev21" type="continuous">
@@ -1831,7 +1811,6 @@
   <parent link="wheel_body2_1"/>
   <child link="wheel_roller2_11_1"/>
   <axis xyz="0.5 0.612372 -0.612372"/>
-  <dynamics damping="0.0"/>
 </joint>
 
 <joint name="Rev22" type="continuous">
@@ -1839,7 +1818,6 @@
   <parent link="wheel_body2_1"/>
   <child link="wheel_roller2_3_1"/>
   <axis xyz="0.0 0.707107 -0.707107"/>
-  <dynamics damping="0.0"/>
 </joint>
 
 <joint name="Rev23" type="continuous">
@@ -1847,7 +1825,6 @@
   <parent link="wheel_body2_1"/>
   <child link="wheel_roller2_8_1"/>
   <axis xyz="-0.5 0.612372 -0.612372"/>
-  <dynamics damping="0.0"/>
 </joint>
 
 <joint name="Rev24" type="continuous">
@@ -1855,7 +1832,6 @@
   <parent link="wheel_body2_1"/>
   <child link="wheel_roller2_1_1"/>
   <axis xyz="-0.866025 0.353553 -0.353553"/>
-  <dynamics damping="0.0"/>
 </joint>
 
 <joint name="Rev25" type="continuous">
@@ -1863,7 +1839,6 @@
   <parent link="wheel_body3_1"/>
   <child link="wheel_roller3_2_1"/>
   <axis xyz="0.5 -0.866025 0.0"/>
-  <dynamics damping="0.0"/>
 </joint>
 
 <joint name="Rev26" type="continuous">
@@ -1871,7 +1846,6 @@
   <parent link="wheel_body3_1"/>
   <child link="wheel_roller3_4_1"/>
   <axis xyz="-0.739199 0.573223 -0.353553"/>
-  <dynamics damping="0.0"/>
 </joint>
 
 <joint name="Rev27" type="continuous">
@@ -1879,7 +1853,6 @@
   <parent link="wheel_body3_1"/>
   <child link="wheel_roller3_9_1"/>
   <axis xyz="-0.78033 0.126826 -0.612372"/>
-  <dynamics damping="0.0"/>
 </joint>
 
 <joint name="Rev28" type="continuous">
@@ -1887,7 +1860,6 @@
   <parent link="wheel_body3_1"/>
   <child link="wheel_roller3_7_1"/>
   <axis xyz="-0.612372 -0.353553 -0.707107"/>
-  <dynamics damping="0.0"/>
 </joint>
 
 <joint name="Rev29" type="continuous">
@@ -1895,7 +1867,6 @@
   <parent link="wheel_body3_1"/>
   <child link="wheel_roller3_12_1"/>
   <axis xyz="0.28033 0.739199 0.612372"/>
-  <dynamics damping="0.0"/>
 </joint>
 
 <joint name="Rev30" type="continuous">
@@ -1903,7 +1874,6 @@
   <parent link="wheel_body3_1"/>
   <child link="wheel_roller3_5_1"/>
   <axis xyz="0.126826 -0.926777 -0.353553"/>
-  <dynamics damping="0.0"/>
 </joint>
 
 <joint name="Rev31" type="continuous">
@@ -1911,7 +1881,6 @@
   <parent link="wheel_body3_1"/>
   <child link="wheel_roller3_10_1"/>
   <axis xyz="-0.5 0.866025 0.0"/>
-  <dynamics damping="0.0"/>
 </joint>
 
 <joint name="Rev32" type="continuous">
@@ -1919,7 +1888,6 @@
   <parent link="wheel_body3_1"/>
   <child link="wheel_roller3_6_1"/>
   <axis xyz="-0.739199 0.573223 -0.353553"/>
-  <dynamics damping="0.0"/>
 </joint>
 
 <joint name="Rev33" type="continuous">
@@ -1927,7 +1895,6 @@
   <parent link="wheel_body3_1"/>
   <child link="wheel_roller3_11_1"/>
   <axis xyz="-0.78033 0.126826 -0.612372"/>
-  <dynamics damping="0.0"/>
 </joint>
 
 <joint name="Rev34" type="continuous">
@@ -1935,7 +1902,6 @@
   <parent link="wheel_body3_1"/>
   <child link="wheel_roller3_3_1"/>
   <axis xyz="-0.612372 -0.353553 -0.707107"/>
-  <dynamics damping="0.0"/>
 </joint>
 
 <joint name="Rev35" type="continuous">
@@ -1943,7 +1909,6 @@
   <parent link="wheel_body3_1"/>
   <child link="wheel_roller3_8_1"/>
   <axis xyz="-0.28033 -0.739199 -0.612372"/>
-  <dynamics damping="0.0"/>
 </joint>
 
 <joint name="Rev36" type="continuous">
@@ -1951,7 +1916,6 @@
   <parent link="wheel_body3_1"/>
   <child link="wheel_roller3_1_1"/>
   <axis xyz="0.126826 -0.926777 -0.353553"/>
-  <dynamics damping="0.0"/>
 </joint>
 
 <joint name="Rigid29" type="fixed">
@@ -1991,3 +1955,4 @@
 </joint>
 
 </robot>
+
