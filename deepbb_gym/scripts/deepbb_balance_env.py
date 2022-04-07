@@ -36,10 +36,10 @@ class DeepBBBalanceEnv(deepbb_env.DeepBBEnv):
     Reward:
     """
     def __init__(self):
-        o_high = np.ones(6)
+        o_high = np.ones(12)
         self.observation_space = spaces.Box(-o_high, o_high)
 
-        a_high = np.array([0.2, 0.2, 0.2])
+        a_high = np.array([1, 1, 1])
         self.action_space = spaces.Box(-a_high, a_high)
 
         self.max_torque = 1.0
@@ -57,7 +57,7 @@ class DeepBBBalanceEnv(deepbb_env.DeepBBEnv):
         of an episode.
         :return:
         """
-        # TODO
+        self.initial_joints_position = self.joints.position
 
 
     def _set_action(self, action):
@@ -70,6 +70,8 @@ class DeepBBBalanceEnv(deepbb_env.DeepBBEnv):
                 self.imu.orientation.z, self.imu.orientation.w]
         roll, pitch, yaw = euler_from_quaternion(q)
 
+        joints_position = np.subtract(self.joints.position, self.initial_joints_position)
+
         obs = [
             roll,
             pitch,
@@ -77,6 +79,12 @@ class DeepBBBalanceEnv(deepbb_env.DeepBBEnv):
             self.imu.angular_velocity.x,
             self.imu.angular_velocity.y,
             self.imu.angular_velocity.z,
+            joints_position[0],
+            joints_position[1],
+            joints_position[2],
+            self.joints.velocity[0],
+            self.joints.velocity[1],
+            self.joints.velocity[2],
         ]
 
         return obs
@@ -86,7 +94,6 @@ class DeepBBBalanceEnv(deepbb_env.DeepBBEnv):
         tilt_angle = math.atan(math.sqrt(math.tan(roll)**2 + math.tan(pitch)**2))
 
         done = False
-
         if tilt_angle > 0.524:
             done = True
 
@@ -96,9 +103,8 @@ class DeepBBBalanceEnv(deepbb_env.DeepBBEnv):
         roll, pitch, yaw = obs[:3]
         tilt_angle = math.atan(math.sqrt(math.tan(roll)**2 + math.tan(pitch)**2))
 
-        reward = 0.524-tilt_angle
-        if reward < 0.2:
-            reward = 0
+        #reward = 0.2-tilt_angle - 0.1*(self.joints.effort[0]**2 + self.joints.effort[1]**2 + self.joints.effort[2]**2)
+        reward = -math.log(tilt_angle)
 
         return reward
 

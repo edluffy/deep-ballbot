@@ -7,8 +7,8 @@ import tensorflow as tf
 from tensorflow.keras import layers
 
 class DDPG():
-    def __init__(self, env, state_dim, action_dim, action_bounds, replay_size=50000, batch_size=64,
-            gamma=0.99, actor_alpha=0.001, critic_alpha=0.002, tau=0.005):
+    def __init__(self, env, state_dim, action_dim, action_bounds, replay_size=1000000, batch_size=64,
+            gamma=0.99, actor_alpha=0.0001, critic_alpha=0.001, tau=0.001):
 
         self.env = env
         self.state_dim = state_dim
@@ -128,11 +128,11 @@ class DDPG():
 
     def create_actor(self):
         state_in = layers.Input(shape=(self.state_dim,))
-        x = layers.Dense(256, activation='relu')(state_in)
-        x = layers.Dense(256, activation='relu')(x)
-        #x = layers.Dense(self.action_dim, activation='tanh')(x)
-        x = layers.Dense(self.action_dim, activation='tanh',
-                kernel_initializer=tf.random_uniform_initializer(-0.003, 0.003))(x)
+        x = layers.Dense(512, activation='relu')(state_in)
+        x = layers.Dense(512, activation='relu')(x)
+        x = layers.Dense(self.action_dim, activation='tanh')(x)
+        #x = layers.Dense(self.action_dim, activation='tanh',
+        #        kernel_initializer=tf.random_uniform_initializer(-0.003, 0.003))(x)
 
         # must scale action_out between -action_bounds and action_bounds
         action_out = tf.multiply(x, self.action_bounds)
@@ -149,8 +149,8 @@ class DDPG():
 
         x = layers.Concatenate()([x, temp])
 
-        x = layers.Dense(256, activation='relu')(x)
-        x = layers.Dense(256, activation='relu')(x)
+        x = layers.Dense(512, activation='relu')(x)
+        x = layers.Dense(512, activation='relu')(x)
         Q_out = layers.Dense(1)(x)
 
         return tf.keras.Model(inputs=[state_in, action_in], outputs=Q_out)
