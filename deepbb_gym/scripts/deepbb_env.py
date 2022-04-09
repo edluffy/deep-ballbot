@@ -146,7 +146,7 @@ class DeepBBEnv(robot_gazebo_env.RobotGazeboEnv):
         pub.publish(torque_msg)
 
     def wait_to_reach_torques(self, target):
-        rate = rospy.Rate(10)
+        #rate = rospy.Rate(1000)
         start_time = rospy.get_rostime().to_sec()
         end_time = 0.0
         bound = 0.001
@@ -160,7 +160,7 @@ class DeepBBEnv(robot_gazebo_env.RobotGazeboEnv):
             and actual[2]<=target[2]+bound and actual[2]>=target[2]-bound):
                 end_time = rospy.get_rostime().to_sec()
                 break
-            rate.sleep()
+            #rate.sleep()
 
         wait_time = end_time-start_time
         rospy.logdebug('Torque wait time:' + str(wait_time))

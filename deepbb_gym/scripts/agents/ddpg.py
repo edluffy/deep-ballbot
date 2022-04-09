@@ -51,7 +51,7 @@ class DDPG():
 
     def run(self, episodes, name=None):
         if name:
-            with open('logs/ddpg/'+name+'.csv', 'w+') as f:
+            with open('/home/edluffy/deepbb_logs/ddpg/'+name+'.csv', 'w+') as f:
                 f.write('episode,reward,loss\n')
 
         episode_rewards = [0]*episodes
@@ -82,7 +82,7 @@ class DDPG():
 
             # Logging
             if name:
-                with open('logs/ddpg/'+name+'.csv', 'a') as f:
+                with open('/home/edluffy/deepbb_logs/ddpg/'+name+'.csv', 'a') as f:
                     f.write(str(ep)+',')
                     f.write(str(episode_rewards[ep])+',')
                     f.write(str(critic_loss.numpy())+'\n')

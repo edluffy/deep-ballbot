@@ -15,12 +15,17 @@ deep_ballbot:
   motor1_torque_controller:
     type: effort_controllers/JointEffortController
     joint: MotorJoint1
-    pid: {p: 100.0, i: 0.01, d: 10.0}
+      #pid: {p: 0.2, i: 20, d: 0.0001}
   motor2_torque_controller:
     type: effort_controllers/JointEffortController
     joint: MotorJoint2
-    pid: {p: 100.0, i: 0.01, d: 10.0}
+      #pid: {p: 0.2, i: 20, d: 0.0001}
   motor3_torque_controller:
     type: effort_controllers/JointEffortController
     joint: MotorJoint3
-    pid: {p: 100.0, i: 0.01, d: 10.0}
+      #pid: {p: 0.2, i: 20, d: 0.0001}
+
+      #gazebo_ros_control/pid_gains:
+      #  MotorJoint1: {p: 100.0, i: 0.01, d: 10.0}
+      #  MotorJoint2: {p: 100.0, i: 0.01, d: 10.0}
+      #  MotorJoint3: {p: 100.0, i: 0.01, d: 10.0}

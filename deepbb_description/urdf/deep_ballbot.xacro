@@ -563,12 +563,6 @@
     </geometry>
     <material name="white"/>
   </visual>
-  <collision>
-    <origin rpy="0 0 0" xyz="0.05261 -0.030375 -0.034698"/>
-    <geometry>
-      <mesh filename="file://$(find deepbb_description)/meshes/wheel_body1_1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-  </collision>
 </link>
 
 <link name="wheel_body2_1">
@@ -584,12 +578,6 @@
     </geometry>
     <material name="white"/>
   </visual>
-  <collision>
-    <origin rpy="0 0 0" xyz="-0.0 0.060749 -0.034698"/>
-    <geometry>
-      <mesh filename="file://$(find deepbb_description)/meshes/wheel_body2_1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-  </collision>
 </link>
 
 <link name="wheel_body3_1">
@@ -605,12 +593,6 @@
     </geometry>
     <material name="white"/>
   </visual>
-  <collision>
-    <origin rpy="0 0 0" xyz="-0.05261 -0.030375 -0.034698"/>
-    <geometry>
-      <mesh filename="file://$(find deepbb_description)/meshes/wheel_body3_1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-  </collision>
 </link>
 
 <link name="wheel_roller1_2_1">

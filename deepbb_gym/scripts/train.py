@@ -1,4 +1,5 @@
 #! /usr/bin/env python3
+import cProfile
 import rospy
 import gym
 import deepbb_balance_env
@@ -10,7 +11,7 @@ from agents import ddpg
 # roslaunch tiago_gym start_training.launch gazebo:=false
 # gz physics -u 0 -s 0.0025; gz stats
 
-if __name__ == '__main__':
+def train():
     rospy.init_node('deepbb_gym')
 
     env = gym.make('DeepBBBalanceEnv-v0')
@@ -19,7 +20,10 @@ if __name__ == '__main__':
     a_high = env.action_space.high
 
     agent = ddpg.DDPG(env, o_dims, a_dims, a_high)
-    agent.run(9999)
+    agent.run(9999, name='run2')
+
+if __name__ == '__main__':
+    cProfile.run('train()', '/home/edluffy/training.prof')
 
     #for i in range(10):
     #    env.reset()

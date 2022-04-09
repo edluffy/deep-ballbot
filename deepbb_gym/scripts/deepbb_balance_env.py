@@ -41,9 +41,10 @@ class DeepBBBalanceEnv(deepbb_env.DeepBBEnv):
 
         a_high = np.array([1, 1, 1])
         self.action_space = spaces.Box(-a_high, a_high)
+        self.action_count = 0
 
-        self.max_torque = 1.0
-        self.min_torque = -1.0
+        self.max_torque = 0.2
+        self.min_torque = -0.2
 
         super(DeepBBBalanceEnv, self).__init__()
 
@@ -58,11 +59,14 @@ class DeepBBBalanceEnv(deepbb_env.DeepBBEnv):
         :return:
         """
         self.initial_joints_position = self.joints.position
-
+        self.action_count = 0
 
     def _set_action(self, action):
-        torques = np.clip(action, self.min_torque, self.max_torque)
+        torques = np.clip(action*0.2, self.min_torque, self.max_torque)
+        print('ACTION', self.action_count,  torques, end='')
         self.move_joints(torques)
+        self.action_count += 1
+        #rospy.sleep(0.001)
 
 
     def _get_obs(self):
@@ -92,9 +96,10 @@ class DeepBBBalanceEnv(deepbb_env.DeepBBEnv):
     def _is_done(self, obs):
         roll, pitch, yaw = obs[:3]
         tilt_angle = math.atan(math.sqrt(math.tan(roll)**2 + math.tan(pitch)**2))
+        print(' TILT:', format(np.degrees(tilt_angle), '.2f'), end='')
 
         done = False
-        if tilt_angle > 0.524:
+        if tilt_angle > math.pi/12:
             done = True
 
         return done
@@ -104,7 +109,15 @@ class DeepBBBalanceEnv(deepbb_env.DeepBBEnv):
         tilt_angle = math.atan(math.sqrt(math.tan(roll)**2 + math.tan(pitch)**2))
 
         #reward = 0.2-tilt_angle - 0.1*(self.joints.effort[0]**2 + self.joints.effort[1]**2 + self.joints.effort[2]**2)
-        reward = -math.log(tilt_angle)
+        #reward = max(0.001, -math.log(tilt_angle))
+        #reward = max(0, 1-math.sqrt(roll**2 + pitch**2 + yaw**2))
+        if not done:
+            reward = max(0, 1 - (abs(tilt_angle) / (math.pi/12)))
+        else:
+            reward = 0
+
+        time = rospy.get_rostime().to_sec()
+        print(' REWARD:', format(reward, '.2f'), 'TIME:', time)
 
         return reward
 

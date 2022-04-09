@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <launch>
   <arg name="train" default="true"/>
-  <arg name="rviz" default="true"/>
+  <arg name="rviz" default="false"/>
 
   <!-- launch rviz -->
   <group if="$(arg rviz)">
