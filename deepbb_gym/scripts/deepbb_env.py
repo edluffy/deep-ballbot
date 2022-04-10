@@ -8,8 +8,8 @@ class DeepBBEnv(robot_gazebo_env.RobotGazeboEnv):
         # Variables that we give through the constructor.
 
         # Internal Vars
-        self.controllers_list = ['joint_state_controller', 'motor1_torque_controller',
-                'motor2_torque_controller', 'motor3_torque_controller']
+        self.controllers_list = ['joint_state_controller', 'motor1_velocity_controller',
+                'motor2_velocity_controller', 'motor3_velocity_controller']
 
         self.robot_name_space = "deep_ballbot"
 
@@ -26,11 +26,11 @@ class DeepBBEnv(robot_gazebo_env.RobotGazeboEnv):
         rospy.Subscriber('/deep_ballbot/joint_states', JointState, self._joints_callback)
         rospy.Subscriber('/imu', Imu, self._imu_callback)
 
-        self._motor1_torque_pub = rospy.Publisher('/deep_ballbot/motor1_torque_controller/command',
+        self._motor1_velocity_pub = rospy.Publisher('/deep_ballbot/motor1_velocity_controller/command',
                 Float64, queue_size=1)
-        self._motor2_torque_pub = rospy.Publisher('/deep_ballbot/motor2_torque_controller/command',
+        self._motor2_velocity_pub = rospy.Publisher('/deep_ballbot/motor2_velocity_controller/command',
                 Float64, queue_size=1)
-        self._motor3_torque_pub = rospy.Publisher('/deep_ballbot/motor3_torque_controller/command',
+        self._motor3_velocity_pub = rospy.Publisher('/deep_ballbot/motor3_velocity_controller/command',
                 Float64, queue_size=1)
 
         self._check_publishers_connection()
@@ -84,17 +84,17 @@ class DeepBBEnv(robot_gazebo_env.RobotGazeboEnv):
 
     def _check_publishers_connection(self):
         rate = rospy.Rate(10)
-        while self._motor1_torque_pub.get_num_connections() == 0 \
-                and self._motor2_torque_pub.get_num_connections() == 0 \
-                and self._motor3_torque_pub.get_num_connections() == 0 \
+        while self._motor1_velocity_pub.get_num_connections() == 0 \
+                and self._motor2_velocity_pub.get_num_connections() == 0 \
+                and self._motor3_velocity_pub.get_num_connections() == 0 \
                 and not rospy.is_shutdown():
-            rospy.logdebug("No subscribers to _motor_torque_pubs, waiting and trying again")
+            rospy.logdebug("No subscribers to _motor_velocity_pubs, waiting and trying again")
             try:
                 rate.sleep()
             except rospy.ROSInterruptException:
                 pass
 
-            rospy.logdebug("_motor_torque_pubs connected")
+            rospy.logdebug("_motor_velocity_pubs connected")
             rospy.logdebug("All Publishers READY")
 
     # Methods that the TaskEnvironment will need to define here as virtual
@@ -133,27 +133,27 @@ class DeepBBEnv(robot_gazebo_env.RobotGazeboEnv):
     # Methods that the TaskEnvironment will need.
     # ----------------------------
 
-    def move_joints(self, torques):
-        rospy.logdebug("Motor torques >> " + str(torques))
-        self.publish_torque(torques[0], self._motor1_torque_pub)
-        self.publish_torque(torques[1], self._motor2_torque_pub)
-        self.publish_torque(torques[2], self._motor3_torque_pub)
-        self.wait_to_reach_torques(torques)
+    def move_joints(self, vels):
+        rospy.logdebug("Motor vels >> " + str(vels))
+        self.publish_velocity(vels[0], self._motor1_velocity_pub)
+        self.publish_velocity(vels[1], self._motor2_velocity_pub)
+        self.publish_velocity(vels[2], self._motor3_velocity_pub)
+        #self.wait_to_reach_velocity(vels)
 
-    def publish_torque(self, torque, pub):
-        torque_msg = Float64()
-        torque_msg.data = torque
-        pub.publish(torque_msg)
+    def publish_velocity(self, vel, pub):
+        vel_msg = Float64()
+        vel_msg.data = vel
+        pub.publish(vel_msg)
 
-    def wait_to_reach_torques(self, target):
+    def wait_to_reach_velocity(self, target):
         #rate = rospy.Rate(1000)
         start_time = rospy.get_rostime().to_sec()
         end_time = 0.0
-        bound = 0.001
+        bound = 1
 
         while not rospy.is_shutdown():
             joint_states = self._check_joint_states_ready()
-            actual = joint_states.effort
+            actual = joint_states.velocity
 
             if (actual[0]<=target[0]+bound and actual[0]>=target[0]-bound
             and actual[1]<=target[1]+bound and actual[1]>=target[1]-bound
@@ -163,7 +163,8 @@ class DeepBBEnv(robot_gazebo_env.RobotGazeboEnv):
             #rate.sleep()
 
         wait_time = end_time-start_time
-        rospy.logdebug('Torque wait time:' + str(wait_time))
+        rospy.logdebug('Velocity wait time:' + str(wait_time))
+        print('Velocity wait time:' + str(wait_time))
         return wait_time
 
     def get_joints(self):

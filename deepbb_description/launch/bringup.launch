@@ -60,7 +60,7 @@
 
     <!-- Load controller manager -->
     <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen"
-      args="joint_state_controller motor1_torque_controller motor2_torque_controller motor3_torque_controller"/>
+      args="joint_state_controller motor1_velocity_controller motor2_velocity_controller motor3_velocity_controller"/>
 
   </group>
 
