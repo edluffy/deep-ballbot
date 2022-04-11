@@ -1614,7 +1614,7 @@
   <parent link="motor_stator1_1"/>
   <child link="motor_rotor1_1"/>
   <axis xyz="-0.612372 0.353553 -0.707107"/>
-  <limit effort="500.0" velocity="10.0"/>
+  <limit effort="500.0" velocity="20.0"/>
 </joint>
 
 <joint name="MotorJoint2" type="continuous">
@@ -1622,7 +1622,7 @@
   <parent link="motor_stator2_1"/>
   <child link="motor_rotor2_1"/>
   <axis xyz="0.0 -0.707107 -0.707107"/>
-  <limit effort="500.0" velocity="10.0"/>
+  <limit effort="500.0" velocity="20.0"/>
 </joint>
 
 <joint name="MotorJoint3" type="continuous">
@@ -1630,7 +1630,7 @@
   <parent link="motor_stator3_1"/>
   <child link="motor_rotor3_1"/>
   <axis xyz="0.612372 0.353553 -0.707107"/>
-  <limit effort="500.0" velocity="10.0"/>
+  <limit effort="500.0" velocity="20.0"/>
 </joint>
 
 <joint name="Rigid26" type="fixed">

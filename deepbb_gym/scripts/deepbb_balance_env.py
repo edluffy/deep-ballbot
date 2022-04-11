@@ -36,15 +36,17 @@ class DeepBBBalanceEnv(deepbb_env.DeepBBEnv):
     Reward:
     """
     def __init__(self):
-        o_high = np.ones(12)
+        o_high = np.ones(6)
         self.observation_space = spaces.Box(-o_high, o_high)
 
         a_high = np.array([1, 1, 1])
         self.action_space = spaces.Box(-a_high, a_high)
         self.action_count = 0
 
-        self.max_torque = 0.2
-        self.min_torque = -0.2
+        self.max_vel = 20
+        self.min_vel = -20
+
+        self.step_size = 0.01
 
         super(DeepBBBalanceEnv, self).__init__()
 
@@ -60,13 +62,14 @@ class DeepBBBalanceEnv(deepbb_env.DeepBBEnv):
         """
         self.initial_joints_position = self.joints.position
         self.action_count = 0
+        self.sim_time = rospy.get_rostime().to_sec()
 
     def _set_action(self, action):
-        torques = np.clip(action*0.2, self.min_torque, self.max_torque)
-        print('ACTION', self.action_count,  torques, end='')
-        self.move_joints(torques)
+        vels = np.clip(action*20, self.min_vel, self.max_vel)
+        print('ACTION', self.action_count,  vels, end='')
+        self.move_joints(vels)
         self.action_count += 1
-        #rospy.sleep(0.001)
+        rospy.sleep(self.step_size)
 
 
     def _get_obs(self):
@@ -83,12 +86,12 @@ class DeepBBBalanceEnv(deepbb_env.DeepBBEnv):
             self.imu.angular_velocity.x,
             self.imu.angular_velocity.y,
             self.imu.angular_velocity.z,
-            joints_position[0],
-            joints_position[1],
-            joints_position[2],
-            self.joints.velocity[0],
-            self.joints.velocity[1],
-            self.joints.velocity[2],
+            #joints_position[0],
+            #joints_position[1],
+            #joints_position[2],
+            #self.joints.velocity[0],
+            #self.joints.velocity[1],
+            #self.joints.velocity[2],
         ]
 
         return obs
@@ -99,25 +102,31 @@ class DeepBBBalanceEnv(deepbb_env.DeepBBEnv):
         print(' TILT:', format(np.degrees(tilt_angle), '.2f'), end='')
 
         done = False
-        if tilt_angle > math.pi/12:
+        if abs(roll) > math.pi/12:
+            done = True
+        if abs(pitch) > math.pi/12:
+            done = True
+        if abs(yaw) > math.pi/12:
             done = True
 
         return done
 
     def _compute_reward(self, obs, done):
         roll, pitch, yaw = obs[:3]
-        tilt_angle = math.atan(math.sqrt(math.tan(roll)**2 + math.tan(pitch)**2))
+        #tilt_angle = math.atan(math.sqrt(math.tan(roll)**2 + math.tan(pitch)**2))
 
-        #reward = 0.2-tilt_angle - 0.1*(self.joints.effort[0]**2 + self.joints.effort[1]**2 + self.joints.effort[2]**2)
-        #reward = max(0.001, -math.log(tilt_angle))
-        #reward = max(0, 1-math.sqrt(roll**2 + pitch**2 + yaw**2))
         if not done:
-            reward = max(0, 1 - (abs(tilt_angle) / (math.pi/12)))
+            #reward = max(0, 1 - (abs(tilt_angle) / (math.pi/12)))
+            #reward = max(0, math.sqrt(3*(math.pi/12)**2) - math.sqrt(roll**2 + pitch**2 + yaw**2))
+            reward = max(0, 1-np.tanh(2000*(roll**2) + 2000*(pitch**2) + 1000*(yaw**2)))
         else:
             reward = 0
 
-        time = rospy.get_rostime().to_sec()
-        print(' REWARD:', format(reward, '.2f'), 'TIME:', time)
+        current_time = rospy.get_rostime().to_sec()
+        self.drift = (current_time-self.sim_time) - self.step_size
+        self.sim_time = current_time
+
+        print(' REWARD:', format(reward, '.2f'), 'TIME:', format(self.sim_time, '.5f'))
 
         return reward
 

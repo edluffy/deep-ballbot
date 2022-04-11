@@ -42,6 +42,7 @@ class DDPG():
         # Replay Memory [(s0, a0, r1, s1, done), (s1, a1, r2, s2, done)...]
         self.replay_memory = deque(maxlen=replay_size)
 
+
     def policy(self, state):
         action = self.actor_model(np.vstack(state))
         action = action.numpy() + self.noise()
@@ -49,20 +50,32 @@ class DDPG():
         action = np.squeeze(action)
         return action
 
-    def run(self, episodes, name=None):
-        if name:
-            with open('/home/edluffy/deepbb_logs/ddpg/'+name+'.csv', 'w+') as f:
-                f.write('episode,reward,loss\n')
+    def run(self, episodes, logdir):
+        summary_writer = tf.summary.create_file_writer('/root/dev_ws/src/deep-ballbot/deepbb_gym/logs/'+logdir)
+        sub1_summary_writer = tf.summary.create_file_writer('/root/dev_ws/src/deep-ballbot/deepbb_gym/logs/'+logdir+'/sub1')
+        sub2_summary_writer = tf.summary.create_file_writer('/root/dev_ws/src/deep-ballbot/deepbb_gym/logs/'+logdir+'/sub2')
+        sub3_summary_writer = tf.summary.create_file_writer('/root/dev_ws/src/deep-ballbot/deepbb_gym/logs/'+logdir+'/sub3')
 
-        episode_rewards = [0]*episodes
-
+        total_steps = 0
         for ep in range(episodes):
+            ep_critic_loss = 0
+            ep_actor_loss = 0
+            ep_reward = 0
+            ep_drift = []
+            ep_action1 = []
+            ep_action2 = []
+            ep_action3 = []
+            ep_body_angle1 = []
+            ep_body_angle2 = []
+            ep_body_angle3 = []
+            ep_body_angular_vel1 = []
+            ep_body_angular_vel2 = []
+            ep_body_angular_vel3 = []
+
             prev_state = self.env.reset()
             prev_state = np.reshape(prev_state, [1, len(prev_state)])
 
             done = False
-            episode_critic_loss = 0
-            episode_actor_loss = 0
             while not done:
                 action = self.policy(prev_state)
                 state, reward, done, _ = self.env.step(action)
@@ -74,20 +87,51 @@ class DDPG():
                 self.update_target(self.actor_target_model.variables, self.actor_model.variables)
                 self.update_target(self.critic_target_model.variables, self.critic_model.variables)
 
-                episode_rewards[ep] += reward
-                episode_critic_loss += critic_loss
-                episode_actor_loss += actor_loss
-
                 prev_state = state
 
-            # Logging
-            if name:
-                with open('/home/edluffy/deepbb_logs/ddpg/'+name+'.csv', 'a') as f:
-                    f.write(str(ep)+',')
-                    f.write(str(episode_rewards[ep])+',')
-                    f.write(str(critic_loss.numpy())+'\n')
+                ep_critic_loss += critic_loss.numpy()
+                ep_actor_loss += actor_loss.numpy()
+                ep_reward += reward
+                total_steps += 1
+                ep_drift.append(self.env.drift)
 
-            print('ep:', ep, 'ave reward:', np.mean(episode_rewards[ep-40:ep]), 'critic loss:', episode_critic_loss.numpy(), 'actor loss:', episode_actor_loss.numpy())
+                ep_action1.append(action[0])
+                ep_action2.append(action[1])
+                ep_action3.append(action[2])
+
+                ep_body_angle1.append(np.squeeze(state)[0])
+                ep_body_angle2.append(np.squeeze(state)[1])
+                ep_body_angle3.append(np.squeeze(state)[2])
+
+                ep_body_angular_vel1.append(np.squeeze(state)[3])
+                ep_body_angular_vel2.append(np.squeeze(state)[4])
+                ep_body_angular_vel3.append(np.squeeze(state)[5])
+
+            # Logging
+            with summary_writer.as_default():
+                tf.summary.scalar('critic loss', ep_critic_loss, step=ep)
+                tf.summary.scalar('actor loss', ep_actor_loss, step=ep)
+                tf.summary.scalar('reward', ep_reward, step=ep)
+                tf.summary.scalar('total steps', total_steps, step=ep)
+                tf.summary.scalar('sim time', self.env.sim_time, step=ep)
+                tf.summary.scalar('average drift', np.mean(ep_drift), step=ep)
+
+            with sub1_summary_writer.as_default():
+                tf.summary.scalar('average action', np.mean(ep_action1), step=ep)
+                tf.summary.scalar('average body angle', np.mean(ep_body_angle1), step=ep)
+                tf.summary.scalar('average body angular vel', np.mean(ep_body_angular_vel1), step=ep)
+
+            with sub2_summary_writer.as_default():
+                tf.summary.scalar('average action', np.mean(ep_action2), step=ep)
+                tf.summary.scalar('average body angle', np.mean(ep_body_angle2), step=ep)
+                tf.summary.scalar('average body angular vel', np.mean(ep_body_angular_vel2), step=ep)
+
+            with sub3_summary_writer.as_default():
+                tf.summary.scalar('average action', np.mean(ep_action3), step=ep)
+                tf.summary.scalar('average body angle', np.mean(ep_body_angle3), step=ep)
+                tf.summary.scalar('average body angular vel', np.mean(ep_body_angular_vel3), step=ep)
+
+            print('\nEPISODE:', ep, 'REWARD:', ep_reward, 'STEPS:', total_steps, '\n')
 
     def replay(self):
         batch = random.sample(self.replay_memory, min(self.batch_size, len(self.replay_memory)))
@@ -130,9 +174,8 @@ class DDPG():
         state_in = layers.Input(shape=(self.state_dim,))
         x = layers.Dense(512, activation='relu')(state_in)
         x = layers.Dense(512, activation='relu')(x)
-        x = layers.Dense(self.action_dim, activation='tanh')(x)
-        #x = layers.Dense(self.action_dim, activation='tanh',
-        #        kernel_initializer=tf.random_uniform_initializer(-0.003, 0.003))(x)
+        x = layers.Dense(self.action_dim, activation='tanh',
+                kernel_initializer=tf.random_uniform_initializer(-0.003, 0.003))(x)
 
         # must scale action_out between -action_bounds and action_bounds
         action_out = tf.multiply(x, self.action_bounds)

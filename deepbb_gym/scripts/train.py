@@ -20,10 +20,10 @@ def train():
     a_high = env.action_space.high
 
     agent = ddpg.DDPG(env, o_dims, a_dims, a_high)
-    agent.run(9999, name='run2')
+    agent.run(999999, logdir='vel20_steeper_reward')
 
 if __name__ == '__main__':
-    cProfile.run('train()', '/home/edluffy/training.prof')
+    cProfile.run('train()', '~/dev_ws/src/deep-ballbot/deepbb_gym/training.prof')
 
     #for i in range(10):
     #    env.reset()
