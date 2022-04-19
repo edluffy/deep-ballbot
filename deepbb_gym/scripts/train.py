@@ -20,7 +20,7 @@ def train():
     a_high = env.action_space.high
 
     agent = ddpg.DDPG(env, o_dims, a_dims, a_high)
-    agent.run(999999, logdir='vel20_steeper_reward')
+    agent.run(999999, logdir='vel20_step=0.02_0.0002_halflr')
 
 if __name__ == '__main__':
     cProfile.run('train()', '~/dev_ws/src/deep-ballbot/deepbb_gym/training.prof')

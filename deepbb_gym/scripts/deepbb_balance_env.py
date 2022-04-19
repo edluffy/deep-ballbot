@@ -36,7 +36,7 @@ class DeepBBBalanceEnv(deepbb_env.DeepBBEnv):
     Reward:
     """
     def __init__(self):
-        o_high = np.ones(6)
+        o_high = np.ones(12)
         self.observation_space = spaces.Box(-o_high, o_high)
 
         a_high = np.array([1, 1, 1])
@@ -46,7 +46,7 @@ class DeepBBBalanceEnv(deepbb_env.DeepBBEnv):
         self.max_vel = 20
         self.min_vel = -20
 
-        self.step_size = 0.01
+        self.step_size = 0.02
 
         super(DeepBBBalanceEnv, self).__init__()
 
@@ -86,12 +86,12 @@ class DeepBBBalanceEnv(deepbb_env.DeepBBEnv):
             self.imu.angular_velocity.x,
             self.imu.angular_velocity.y,
             self.imu.angular_velocity.z,
-            #joints_position[0],
-            #joints_position[1],
-            #joints_position[2],
-            #self.joints.velocity[0],
-            #self.joints.velocity[1],
-            #self.joints.velocity[2],
+            joints_position[0],
+            joints_position[1],
+            joints_position[2],
+            self.joints.velocity[0],
+            self.joints.velocity[1],
+            self.joints.velocity[2],
         ]
 
         return obs
@@ -118,7 +118,7 @@ class DeepBBBalanceEnv(deepbb_env.DeepBBEnv):
         if not done:
             #reward = max(0, 1 - (abs(tilt_angle) / (math.pi/12)))
             #reward = max(0, math.sqrt(3*(math.pi/12)**2) - math.sqrt(roll**2 + pitch**2 + yaw**2))
-            reward = max(0, 1-np.tanh(2000*(roll**2) + 2000*(pitch**2) + 1000*(yaw**2)))
+            reward = max(0, 1-np.tanh(20*(roll**2) + 20*(pitch**2) + 10*(yaw**2)))
         else:
             reward = 0
 

@@ -8,7 +8,7 @@ from tensorflow.keras import layers
 
 class DDPG():
     def __init__(self, env, state_dim, action_dim, action_bounds, replay_size=1000000, batch_size=64,
-            gamma=0.99, actor_alpha=0.0001, critic_alpha=0.001, tau=0.001):
+            gamma=0.99, actor_alpha=0.00005, critic_alpha=0.0005, tau=0.001):
 
         self.env = env
         self.state_dim = state_dim
